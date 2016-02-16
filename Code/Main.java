@@ -23,50 +23,74 @@ public class Main {
         System.out.println ("--------------------------------------------------------------------------------------------------------------------------------------------");
         System.out.println ("                                                                Level 1");
         System.out.println ("--------------------------------------------------------------------------------------------------------------------------------------------");
-		character.currentHealth = character.move();
+		System.out.println("What do you want to do now?");
+		input = in.nextLine();
+        character.currentHealth = character.move();
         // Always call the following 2 lines after every scene
-        input = in.nextLine();
         status (input, character);
-		character.currentHealth = character.move();
-        // Always call the following 2 lines after every scene
-        input = in.nextLine();
+		System.out.println("What do you want to do now?");
+		input = in.nextLine();
+        character.currentHealth = character.move();
         status (input, character);
-		
 
 /*
         // Level 2
         System.out.println ("--------------------------------------------------------------------------------------------------------------------------------------------");
         System.out.println ("                                                                Level 2");
         System.out.println ("--------------------------------------------------------------------------------------------------------------------------------------------");
-		// Always call the following 2 lines after every scene
-        input = in.nextLine ();
+		System.out.println("What do you want to do now?");
+		input = in.nextLine();
+        character.currentHealth = character.move();
+        // Always call the following 2 lines after every scene
+        status (input, character);
+		System.out.println("What do you want to do now?");
+		input = in.nextLine();
+        character.currentHealth = character.move();
         status (input, character);
 
         // Level 3
         System.out.println("--------------------------------------------------------------------------------------------------------------------------------------------");
         System.out.println("                                                                Level 3");
         System.out.println("--------------------------------------------------------------------------------------------------------------------------------------------");
+        System.out.println("What do you want to do now?");
+		input = in.nextLine();
+        character.currentHealth = character.move();
         // Always call the following 2 lines after every scene
-        input = in.nextLine();
-        status(input, character);
-
+        status (input, character);
+		System.out.println("What do you want to do now?");
+		input = in.nextLine();
+        character.currentHealth = character.move();
+        status (input, character);
+        
         // Level 4
         System.out.println("--------------------------------------------------------------------------------------------------------------------------------------------");
         System.out.println("                                                                Level 4");
         System.out.println("--------------------------------------------------------------------------------------------------------------------------------------------");
+        System.out.println("What do you want to do now?");
+		input = in.nextLine();
+        character.currentHealth = character.move();
         // Always call the following 2 lines after every scene
-        input = in.nextLine();
-        status(input, character);
+        status (input, character);
+		System.out.println("What do you want to do now?");
+		input = in.nextLine();
+        character.currentHealth = character.move();
+        status (input, character);
 
         // Level 5 (Boss Fight)
         System.out.println("--------------------------------------------------------------------------------------------------------------------------------------------");
         System.out.println("                                                                Level 5");
         System.out.println("--------------------------------------------------------------------------------------------------------------------------------------------");
+        System.out.println("What do you want to do now?");
+		input = in.nextLine();
+        character.currentHealth = character.move();
         // Always call the following 2 lines after every scene
-        input = in.nextLine();
-        status(input, character);
-    }
+        status (input, character);
+		System.out.println("What do you want to do now?");
+		input = in.nextLine();
+        character.currentHealth = character.move();
+        status (input, character);
 */
+    }
 
     // Checks to see if the player types in "status" during any time in the game
     public static void status(String command, Player person)  {
