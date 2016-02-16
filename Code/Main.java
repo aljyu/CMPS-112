@@ -19,83 +19,133 @@ public class Main {
         
 		
 		
-		// Level 1
+	// Level 1
         System.out.println ("--------------------------------------------------------------------------------------------------------------------------------------------");
         System.out.println ("                                                                Level 1");
         System.out.println ("--------------------------------------------------------------------------------------------------------------------------------------------");
-		System.out.println("What do you want to do now?");
-		input = in.nextLine();
+	System.out.println("What do you want to do now?");
+	input = in.nextLine();
+        // Always call the following 4 lines after every input
+        while (statusCheck(input)) {
+            status (input, character);
+            input = in.nextLine();
+        }
         character.currentHealth = character.move();
-        // Always call the following 2 lines after every scene
-        status (input, character);
-		System.out.println("What do you want to do now?");
-		input = in.nextLine();
+	System.out.println("What do you want to do now?");
+	input = in.nextLine();
+        // Always call the following 4 lines after every input
+        while (statusCheck(input)) {
+            status (input, character);
+            input = in.nextLine();
+        }
         character.currentHealth = character.move();
-        status (input, character);
-
 /*
         // Level 2
         System.out.println ("--------------------------------------------------------------------------------------------------------------------------------------------");
         System.out.println ("                                                                Level 2");
         System.out.println ("--------------------------------------------------------------------------------------------------------------------------------------------");
-		System.out.println("What do you want to do now?");
-		input = in.nextLine();
+	System.out.println("What do you want to do now?");
+        input = in.nextLine();
+        // Always call the following 4 lines after every input
+        while (statusCheck(input)) {
+            status (input, character);
+            input = in.nextLine();
+        }
         character.currentHealth = character.move();
-        // Always call the following 2 lines after every scene
-        status (input, character);
-		System.out.println("What do you want to do now?");
-		input = in.nextLine();
+	System.out.println("What do you want to do now?");
+	input = in.nextLine();
+        // Always call the following 4 lines after every input
+        while (statusCheck(input)) {
+            status (input, character);
+            input = in.nextLine();
+        }
         character.currentHealth = character.move();
-        status (input, character);
-
+	
         // Level 3
         System.out.println("--------------------------------------------------------------------------------------------------------------------------------------------");
         System.out.println("                                                                Level 3");
         System.out.println("--------------------------------------------------------------------------------------------------------------------------------------------");
         System.out.println("What do you want to do now?");
-		input = in.nextLine();
+        input = in.nextLine();
+        // Always call the following 4 lines after every input
+        while (statusCheck(input)) {
+            status (input, character);
+            input = in.nextLine();
+        }
         character.currentHealth = character.move();
-        // Always call the following 2 lines after every scene
-        status (input, character);
-		System.out.println("What do you want to do now?");
-		input = in.nextLine();
+	System.out.println("What do you want to do now?");
+	input = in.nextLine();
+        // Always call the following 4 lines after every input
+        while (statusCheck(input)) {
+            status (input, character);
+            input = in.nextLine();
+        }
         character.currentHealth = character.move();
-        status (input, character);
-        
+	
         // Level 4
         System.out.println("--------------------------------------------------------------------------------------------------------------------------------------------");
         System.out.println("                                                                Level 4");
         System.out.println("--------------------------------------------------------------------------------------------------------------------------------------------");
         System.out.println("What do you want to do now?");
-		input = in.nextLine();
+        input = in.nextLine();
+        // Always call the following 4 lines after every input
+        while (statusCheck(input)) {
+            status (input, character);
+            input = in.nextLine();
+        }
         character.currentHealth = character.move();
-        // Always call the following 2 lines after every scene
-        status (input, character);
-		System.out.println("What do you want to do now?");
-		input = in.nextLine();
+	System.out.println("What do you want to do now?");
+	input = in.nextLine();
+        // Always call the following 4 lines after every input
+        while (statusCheck(input)) {
+            status (input, character);
+            input = in.nextLine();
+        }
         character.currentHealth = character.move();
-        status (input, character);
-
+	
         // Level 5 (Boss Fight)
         System.out.println("--------------------------------------------------------------------------------------------------------------------------------------------");
         System.out.println("                                                                Level 5");
         System.out.println("--------------------------------------------------------------------------------------------------------------------------------------------");
         System.out.println("What do you want to do now?");
-		input = in.nextLine();
+        input = in.nextLine();
+        // Always call the following 4 lines after every input
+        while (statusCheck(input)) {
+            status (input, character);
+            input = in.nextLine();
+        }
         character.currentHealth = character.move();
-        // Always call the following 2 lines after every scene
-        status (input, character);
-		System.out.println("What do you want to do now?");
-		input = in.nextLine();
+	System.out.println("What do you want to do now?");
+	input = in.nextLine();
+        // Always call the following 4 lines after every input
+        while (statusCheck(input)) {
+            status (input, character);
+            input = in.nextLine();
+        }
         character.currentHealth = character.move();
-        status (input, character);
 */
     }
 
-    // Checks to see if the player types in "status" during any time in the game
+    // Method explains what happens if the player types in "status" during any time in the game
     public static void status(String command, Player person)  {
-        if ((command.equals("Status") || command.equals("status")) && (person.playerCurrentHP() > 0)) {
-            System.out.println("You currently have " + person.playerCurrentHP() + " HP and " + person.playerCurrentPotions() + " potions.\n");
+        if (statusCheck(command)) {
+            if (person.playerCurrentHP() > 0) {
+                System.out.println("You currently have " + person.playerCurrentHP() + " HP and " + person.playerCurrentPotions() + " potions.\n");
+            }
+            else {
+                System.out.println("GAME OVER!");
+                // Terminates the program [temporary for now]
+                System.exit(0);
+            }
+        }
+    }
+    // Method checks to see if the player typed in "status"
+    public static Boolean statusCheck(String prompt) {
+        if (prompt.equals("Status") || prompt.equals("status")) {
+            return true;
+        }
+        else {
+            return false;
         }
     }
 }
