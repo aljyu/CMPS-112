@@ -60,7 +60,8 @@ public class Main {
             input = in.nextLine();
         }
         character.currentHealth = character.move();
-	
+*/
+
         // Level 3
         System.out.println("--------------------------------------------------------------------------------------------------------------------------------------------");
         System.out.println("                                                                Level 3");
@@ -81,7 +82,8 @@ public class Main {
             input = in.nextLine();
         }
         character.currentHealth = character.move();
-	
+
+/*
         // Level 4
         System.out.println("--------------------------------------------------------------------------------------------------------------------------------------------");
         System.out.println("                                                                Level 4");
