@@ -10,8 +10,7 @@ public class Adventure {
 		Random rand = new Random();
 
 		//Game variables
-		String[] enemies = { "Skeleton", "Zombie", "Rat", "Assasin"};
-		String[] adj = {"Angry", "Bloody", "Rotting", "Old", "Decrepid", "Vicious", "Ugly"};
+		String[] enemies = { "Alien Guard", "Regular Alien"};
 		int maxEnemyHealth = 100;
 		int enemyAttackDamage = 25;
 
@@ -24,89 +23,89 @@ public class Adventure {
         int potionDropChance = 50; //percent
 
         boolean running = true; 
+    
+        System.out.println("Wake up...");
+    	String str = "Poop";
+		Player character = new Player (str,100, 100);
+		System.out.println("Your name is " + str + "\n");
+    	String input = in.nextLine();
 
-        System.out.println("Welcome to the Dungeon!");
-
-        GAME:
-        while(running) {
+        START:
+        while(running) 
+        {
         	System.out.println("-------------------------------------------");
-            
-            int enemyHealth = rand.nextInt(maxEnemyHealth);
-            String enemy = adj[rand.nextInt(adj.length)] + " " +enemies[rand.nextInt(enemies.length)];
-            System.out.println("\t# An " + enemy + " has appeared! #\n");
+        	System.out.println("------------------LEVEL 1------------------");
+        	System.out.println("-------------------------------------------");
+        	System.out.println("[Level 1 script goes here ...blah blah many lines. Lorem ipsum....]");
+        	
+        
+        	System.out.println("Location: Bedroom");
+        	System.out.println("What do you want to do now?");
 
-            while(enemyHealth > 0){ 		//while the enemy is not dead fight it
-            	System.out.println("\tYour HP: " + playerHealth);
-            	System.out.println("\t" + enemy + "'s HP: " + enemyHealth + "\n");
-            	System.out.println("What do you want to do?");
-            	System.out.println("1. Attack");
-            	System.out.println("2. Drink potion.");
-            	System.out.println("3. Run!");
-
-            	String input = in.nextLine();
-
-            	//check command imput
-            	if(input.equals("1")){ // attcking
-            		int damageDealt = rand.nextInt(playerAttackDamage);
-            		int damageTaken = rand.nextInt(enemyAttackDamage);
-
-            		enemyHealth = enemyHealth - damageDealt;
-            		playerHealth = playerHealth - damageTaken;
-
-            		System.out.println("\t-> You attacked the " + enemy + " for " + damageDealt + " damage!");
-            		System.out.println("\t-> The " + enemy + " attacked back!");
-            		System.out.println("\t-> You take " + damageTaken + " damage.");
-
-            		if (playerHealth < 1){
-            			System.out.println("\t-> You have taken too much damage!");
-            			break;
-            		}
-
-            	} else if (input.equals("2")){
-            		int damageTaken = rand.nextInt(enemyAttackDamage);
-
-            		playerHealth = playerHealth - damageTaken;
-
-	            	System.out.println("\t-> The " + enemy + " attacked!");
-            		System.out.println("\t-> You take " + damageTaken + " damage.");
-
-            		if (numPotions > 0) {
-            			if ( playerHealth + potionHealAmount >= maxPlayerHealth){
-            				playerHealth = maxPlayerHealth;
-            			} else {
-	            			playerHealth = playerHealth + potionHealAmount;
-	            			numPotions --;
-	            			System.out.println("\t-> You used a potion! " + "+" + potionHealAmount + " HP." );
-	            			System.out.println("\t-> Current HP: " + playerHealth);
-	            			System.out.println("\t-> You now have " + numPotions + " left.");
-	            		}
-	            	} else {
-	            		System.out.println("\t-> Out of potions.");
-	            	}
-
-            	} else if (input.equals("3")){
-            		System.out.println("\t-> You try to run away from " + enemy + "!");
-            		continue GAME;
-
-            	} else{
-            		System.out.println("\t-> Pay attention! You're in a battle!");
-            	}
-            }
-
-            if (playerHealth < 1){
-            	System.out.println("You limp out of the battle...");
+        	input = in.nextLine();
+            while (statusCheck(input)) 
+            {
+                status (input, character);
+                input = in.nextLine();
             }
 
             System.out.println("-------------------------------------------");
-            System.out.println(" # " + enemy + " was defeted! #");
+            
             System.out.println(" # You have " + playerHealth + " HP left #");
-            if(rand.nextInt(100) < potionDropChance){
-            	numPotions++;
-            	System.out.println(" # The " + enemy + " dropped a Potion. #");
-            	System.out.println(" # You now have " + numPotions + " potion(s). #");
+            System.out.println("next level");
+        	input = in.nextLine();
+        	
+        	if (input.equals("no")) running = false;
+        	else if (input.equals("yes")) continue;
+        	else System.out.println("ayyy");
+        	
+        	L2:
+        	System.out.println("-------------------------------------------");
+        	System.out.println("------------------LEVEL 2------------------");
+        	System.out.println("-------------------------------------------");
+        	System.out.println("[Level 2 script goes here ...blah blah many lines. Lorem ipsum....]");
+        	
+        	System.out.println("Location: Space Ship");
+        	System.out.println("What do you want to do now?");
+
+        	input = in.nextLine();
+            while (statusCheck(input)) 
+            {
+                status (input, character);
+                input = in.nextLine();
             }
 
-        }
+            System.out.println("-------------------------------------------");
+            
+            System.out.println(" # You have " + playerHealth + " HP left #");
+        	System.out.println("end?");
+        	input = in.nextLine();
+        	if(input.equals("yes"))
+        		running = false;
+        	if(input.equals("no"))
+        		continue START;       		
 
+        }
+		              	
 	}
+	// Method explains what happens if the player types in "status" during any time in the game
+		public static void status(String command, Player person)  {
+			while (statusCheck(command)) {
+				if (person.playerCurrentHP() > 0) {
+					System.out.println("You currently have " + person.playerCurrentHP() + " HP.\n");
+				}
+				else {
+					System.out.println("GAME OVER!");
+					// Terminates the program [temporary for now]
+					System.exit(0);
+				}
+			}
+		}
+		// Method checks to see if the player typed in "status"
+		public static boolean statusCheck(String prompt) {
+			if (prompt.equals("Status") || prompt.equals("status")) { return true; } 
+			else { return false; }
+		}
 }
+
+

@@ -9,13 +9,13 @@ public class Player{
     private int potionDropChance; //= 50 //percent
 
     // constructor for the player 
-    public Player(String name, int health, int attackDamage, int potions, int heal, int luck){
+    public Player(String name, int health, int attackDamage){
     	name = this.name;
-    	playerHealth, maxPlayerHealth = health;
+    	playerHealth = maxPlayerHealth = health;
     	playerAttackDamage = attackDamage;
-    	numPotions = potions;
-    	potionHealAmount = heal;
-    	potionDropChance = luck;
+    	//numPotions = potions;
+    	//potionHealAmount = heal;
+    	//potionDropChance = luck;
     }
 
     /* ------- Funtions for Game Advancement ------ */
@@ -25,9 +25,9 @@ public class Player{
     	playerHealth = newHealth;
     }
 
-
-
-
-    }
+	public int playerCurrentHP() {
+		
+		return playerHealth;
+	}
 
 }
