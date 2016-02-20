@@ -10,7 +10,8 @@ public class Adventure {
 		Random rand = new Random();
 
 		//Game variables
-		String[] enemies = { "Alien Guard", "Regular Alien"};
+		String[] enemies = { "Skeleton", "Zombie", "Rat", "Assasin"};
+		String[] adj = {"Angry", "Bloody", "Rotting", "Old", "Decrepid", "Vicious", "Ugly"};
 		int maxEnemyHealth = 100;
 		int enemyAttackDamage = 25;
 
@@ -23,22 +24,18 @@ public class Adventure {
         int potionDropChance = 50; //percent
 
         boolean running = true; 
-    	System.out.println("-------------------------------------------");
-    	System.out.println("------------------LEVEL 1------------------");
-    	System.out.println("-------------------------------------------");
-    	System.out.println("[Level 1 script goes here ...blah blah many lines. Lorem ipsum....]");
 
-        System.out.println("Wake up...");
+        System.out.println("Welcome to the Dungeon!");
 
-        L1:
-        while(running) 
-        {
+        GAME:
+        while(running) {
         	System.out.println("-------------------------------------------");
             
-        	System.out.println("\033[1mLocation: Bedroom");
-        	
-            while(enemyHealth > 0)
-            { 		//while the enemy is not dead fight it
+            int enemyHealth = rand.nextInt(maxEnemyHealth);
+            String enemy = adj[rand.nextInt(adj.length)] + " " +enemies[rand.nextInt(enemies.length)];
+            System.out.println("\t# An " + enemy + " has appeared! #\n");
+
+            while(enemyHealth > 0){ 		//while the enemy is not dead fight it
             	System.out.println("\tYour HP: " + playerHealth);
             	System.out.println("\t" + enemy + "'s HP: " + enemyHealth + "\n");
             	System.out.println("What do you want to do?");
@@ -49,8 +46,7 @@ public class Adventure {
             	String input = in.nextLine();
 
             	//check command imput
-            	if(input.equals("1"))
-            	{ // attcking
+            	if(input.equals("1")){ // attcking
             		int damageDealt = rand.nextInt(playerAttackDamage);
             		int damageTaken = rand.nextInt(enemyAttackDamage);
 
@@ -61,34 +57,54 @@ public class Adventure {
             		System.out.println("\t-> The " + enemy + " attacked back!");
             		System.out.println("\t-> You take " + damageTaken + " damage.");
 
-            		if (playerHealth < 1)
-            		{
+            		if (playerHealth < 1){
             			System.out.println("\t-> You have taken too much damage!");
             			break;
             		}
 
-            	}
-            	else if (input.equals("3"))
-            	{
-            		System.out.println("\t-> You try to run away from " + enemy + "!");
-            		continue L1;
+            	} else if (input.equals("2")){
+            		int damageTaken = rand.nextInt(enemyAttackDamage);
 
-            	}
-            	else
-            	{
+            		playerHealth = playerHealth - damageTaken;
+
+	            	System.out.println("\t-> The " + enemy + " attacked!");
+            		System.out.println("\t-> You take " + damageTaken + " damage.");
+
+            		if (numPotions > 0) {
+            			if ( playerHealth + potionHealAmount >= maxPlayerHealth){
+            				playerHealth = maxPlayerHealth;
+            			} else {
+	            			playerHealth = playerHealth + potionHealAmount;
+	            			numPotions --;
+	            			System.out.println("\t-> You used a potion! " + "+" + potionHealAmount + " HP." );
+	            			System.out.println("\t-> Current HP: " + playerHealth);
+	            			System.out.println("\t-> You now have " + numPotions + " left.");
+	            		}
+	            	} else {
+	            		System.out.println("\t-> Out of potions.");
+	            	}
+
+            	} else if (input.equals("3")){
+            		System.out.println("\t-> You try to run away from " + enemy + "!");
+            		continue GAME;
+
+            	} else{
             		System.out.println("\t-> Pay attention! You're in a battle!");
             	}
             }
 
-            if (playerHealth < 1)
-            {
+            if (playerHealth < 1){
             	System.out.println("You limp out of the battle...");
             }
 
             System.out.println("-------------------------------------------");
-            
+            System.out.println(" # " + enemy + " was defeted! #");
             System.out.println(" # You have " + playerHealth + " HP left #");
-            
+            if(rand.nextInt(100) < potionDropChance){
+            	numPotions++;
+            	System.out.println(" # The " + enemy + " dropped a Potion. #");
+            	System.out.println(" # You now have " + numPotions + " potion(s). #");
+            }
 
         }
 
