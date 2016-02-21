@@ -5,7 +5,6 @@ public class Player{
     public static int currentHealth;
     public static int attackDamage;
     public static int numPotions;
-    public static int potionHealAmount;
 
     // Player's constructor
     public Player (/*String name, */ int maxHP, int currentHP, int damage, int potion, int heal) {
@@ -14,7 +13,6 @@ public class Player{
         currentHealth = currentHP;
         attackDamage = damage;
         numPotions = potion;
-        potionHealAmount = heal;
     }
 
     // Method to view the player's max HP
@@ -23,6 +21,9 @@ public class Player{
     }
     // Method to view the player's current HP
     public static int playerCurrentHP() {
+		if (currentHealth > maxHealth) {
+			currentHealth = maxHealth;
+		}
         return currentHealth;
     }
     // Method to view the player's current number of potions
@@ -38,5 +39,10 @@ public class Player{
 	// Method to state what happens when the player gets hit (by the boss)
 	public static int hit() {
 		return (currentHealth - 10);
+	}
+	
+	// Method to increase HP using a potion
+	public static int drink() {
+		return (currentHealth + 20);
 	}
 }
