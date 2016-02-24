@@ -1,0 +1,90 @@
+[33mcommit 145113b36a71e9f079f3a37e4a80520de49c0b20[m
+Author: Vanessa <vahurtad@ucsc.edu>
+Date:   Tue Feb 23 15:47:07 2016 -0800
+
+    started level 2
+
+[33mcommit abadb9aab2d34a148928f133e40b4e30f2b2d0d8[m
+Author: = <=>
+Date:   Sun Feb 21 14:47:38 2016 -0800
+
+    Added level 1 script
+
+[33mcommit 3f6f812cf116abc1cc4035d419a4abecd32346a5[m
+Author: Alice <aljyu.95@ucsc.edu>
+Date:   Fri Feb 19 00:00:36 2016 -0800
+
+    Made changes to Main.java
+
+[33mcommit 730785f5aa45b04b02806ae5fb7b0701bf2f8abf[m
+Author: Alice <aljyu.95@ucsc.edu>
+Date:   Thu Feb 18 23:26:06 2016 -0800
+
+    Added a test file
+
+[33mcommit 9ed4d7e28b26508162a624cb17709f7f4e5d4afb[m
+Author: Alice <aljyu.95@ucsc.edu>
+Date:   Thu Feb 18 22:51:55 2016 -0800
+
+    Removed test file
+
+[33mcommit f36a8d97d341bf243048a29cfb341171a4252e0f[m
+Merge: b8af471 e0aeef8
+Author: Alice <aljyu.95@ucsc.edu>
+Date:   Thu Feb 18 22:49:26 2016 -0800
+
+    Merge branch 'master' of https://github.com/aljyu/cmps-112
+
+[33mcommit b8af4713c5232aaafe6860c404ebe8ed11bb5b11[m
+Author: Alice <aljyu.95@ucsc.edu>
+Date:   Thu Feb 18 22:48:50 2016 -0800
+
+    Testing
+
+[33mcommit e0aeef8726091887acdba180706e4de4f801b6b9[m
+Author: aljyu <aljyu@ucsc.edu>
+Date:   Tue Feb 16 06:33:19 2016 -0800
+
+    Updated Main.java
+
+[33mcommit bd4a6ef9bc7119382fd5645c60ec7ab2fc727cbe[m
+Author: aljyu <aljyu@ucsc.edu>
+Date:   Mon Feb 15 20:22:06 2016 -0800
+
+    Edited Main.java
+
+[33mcommit cba4dc8da02e431feaa87e18216e300e19e8faec[m
+Author: aljyu <aljyu@ucsc.edu>
+Date:   Mon Feb 15 19:43:38 2016 -0800
+
+    Deleted Adventure.java
+
+[33mcommit da4db681b787c2a00c2251ca3b2af0f0167a57a2[m
+Author: aljyu <aljyu@ucsc.edu>
+Date:   Mon Feb 15 19:42:11 2016 -0800
+
+    Added code for Main.java and Player.java
+
+[33mcommit 93b7262cba1631c2cc3390900ee8d7a807165d82[m
+Author: aljyu <aljyu@ucsc.edu>
+Date:   Mon Feb 15 08:54:27 2016 -0800
+
+    Added Adventure.java and Player.java to the Code folder
+
+[33mcommit ed34ce09418a236afc97f9678654689dcc149312[m
+Author: Francisco Rocha <frocha@ucsc.edu>
+Date:   Tue Feb 9 16:05:38 2016 -0800
+
+    added Frankies stuff
+
+[33mcommit 8bb56e9f30cae732a57f12d07694e4349e04b420[m
+Author: aljyu <aljyu@ucsc.edu>
+Date:   Thu Jan 28 21:19:54 2016 -0800
+
+    Added the project guidelines powerpoint
+
+[33mcommit da96842fc0bd737295cc23d169a7033772986166[m
+Author: Alice Yu <aljyu@ucsc.edu>
+Date:   Thu Jan 28 21:03:57 2016 -0800
+
+    Initial commit
