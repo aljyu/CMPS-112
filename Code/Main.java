@@ -13,7 +13,7 @@ public class Main {
         System.out.println ("You currently have " + character.playerCurrentHP() + " HP and " + character.playerCurrentPotions() + " potions.");
         System.out.println ("If you wish to view these stats during any point of the game, type in \"Status\".");
 		System.out.println("If you wish to drink a potion, first type in \"Status\" and follow the instructions given.");
-		System.out.println("In this game, every time you perform an action you will lose HP. When your HP hits 0, you will die and the game will end.");
+		System.out.println("In this game, every time you choose to perform an action you will lose HP. When your HP hits 0, you will die and the game will end.");
         System.out.println ("\nNow, let's begin...\n");
         // The beginning of the game
 		// Global game variable
@@ -295,6 +295,10 @@ public class Main {
 			}
 			if (input.equalsIgnoreCase("glowing light")) {
 				character.currentHealth = character.move();
+				if (character.currentHealth <= 0) {
+					gameStatus = false;
+					break LOOP_1;
+				}
 				System.out.println("\nYou reach out and feel something slimy and smooth. Creeped out, you jump back and look at your hands to see a green electric slime coating your fingertips. You touch the wall in front of you, only to realize that it isn't actually a wall. It feels... slimy... and smooth... Your eyes widden in horror as you begin to frantically rub your hands across the \"wall\", only to have it reveal more of the green electric slime. Your horror increases as it finally hits you. You are trapped inside of a giant, green slime bubble.\nYou frantically grope around your surroundings in hopes that you can find something that will help you out of this mess. Your hands brush against something that feels like a switch. You brace yourself for the worst and flip it.\nImmediately, the slime bubble around you begins to glow brighter and brighter.\nYou look around at your surroundings and see that there are three items stuck to the sides of the bubble: a SCREWDRIVER, a pair of SCISSORS, and a CROWBAR.\nWhat do you want to grab?\n");
 				
 				input = in.nextLine();
@@ -321,15 +325,27 @@ public class Main {
 					}
 					if (input.equalsIgnoreCase("screwdriver")) {
 						character.currentHealth = character.move();
+						if (character.currentHealth <= 0) {
+							gameStatus = false;
+							break LOOP_1;
+						}
 						System.out.println("You start poking the bubble with the screwdriver. However, you soon realize that your poking isn't doing anything to the bubble. Why is it even here?! ~.~ Oh well... Guess it's time to try something else.\n");
 					}
 					else if (input.equalsIgnoreCase("scissors")) {
 						character.currentHealth = character.move();
+						if (character.currentHealth <= 0) {
+							gameStatus = false;
+							break LOOP_1;
+						}
 						System.out.println("After struggling with the scissors, you finally manage to get out of your entrapement! However, your victory is short lived as you notice that you are inside a maze of a shapeship, filled with winding corridors and thousands of rooms.\n");
 						next = false;
 					}
 					else if (input.equalsIgnoreCase("crowbar")) {
 						character.currentHealth = character.move();
+						if (character.currentHealth <= 0) {
+							gameStatus = false;
+							break LOOP_1;
+						}
 						System.out.println("You start attacking the bubble with the crowbar. However, you soon realize that your attacks aren't doing anything to the bubble. Why is it even here?! ~.~ Oh well... Guess it's time to try something else.\n");
 					}
 					else {
@@ -340,6 +356,10 @@ public class Main {
 			}
 			else if (input.equalsIgnoreCase("strange noises")) {
 				character.currentHealth = character.move();
+				if (character.currentHealth <= 0) {
+					gameStatus = false;
+					break LOOP_1;
+				}
 				System.out.println("As you walk towards the strange noises, you begin to recognize them. It's the sound that is created when two metal or steel objects are being banged together. You soon find yourself in front of a door with light streaming out of it. You cautiously open the door and peek inside the room.\nYou see rows of gigantic cylindrical containers lined against the walls, with their lids opening and closing. You also notice that there are three items laying partially hideen behind one of the containers and beyond one of the containers, a metal door. You walk into the room and try to open the door, only to find out that it's locked. You go back to the items and find: a small BOX, a SCREWDRIVER, a pair of SCISSORS, and a CROWBAR.\nWhat do you want to grab?\n");
 				
 				input = in.nextLine();
@@ -366,6 +386,10 @@ public class Main {
 					}
 					if (input.equalsIgnoreCase("box")) {
 						character.currentHealth = character.move();
+						if (character.currentHealth <= 0) {
+							gameStatus = false;
+							break LOOP_1;
+						}
 						if (checked == false) {
 							checked = true;
 							// Always call the following 3 lines after every move
@@ -402,15 +426,27 @@ public class Main {
 					}
 					if (input.equalsIgnoreCase("screwdriver")) {
 						character.currentHealth = character.move();
+						if (character.currentHealth <= 0) {
+							gameStatus = false;
+							break LOOP_1;
+						}
 						System.out.println("After struggling with the screwdriver, you finally manage to get out of your entrapment! However, your victory is short lived as you notice that you are inside a maze of a shapeship, filled with winding corridors and thousands of rooms.\n");
 						next = false;
 					}
 					else if (input.equalsIgnoreCase("scissors")) {
 						character.currentHealth = character.move();
+						if (character.currentHealth <= 0) {
+							gameStatus = false;
+							break LOOP_1;
+						}
 						System.out.println("You start attacking the door hinges with the scissors. However, you soon realize that your attack isn't doing anything to the door. Why is it even here?! ~.~ Oh well... Guess it's time to try something else.\n");
 					}
 					else if (input.equalsIgnoreCase("crowbar")) {
 						character.currentHealth = character.move();
+						if (character.currentHealth <= 0) {
+							gameStatus = false;
+							break LOOP_1;
+						}
 						System.out.println("You start attacking the door with the crowbar. However, you soon realize that your attack isn't doing anything to the bubble. Why is it even here?! ~.~ Oh well... Guess it's time to try something else.\n");
 					}
 					else {
@@ -421,6 +457,10 @@ public class Main {
 			}
 			else if (input.equalsIgnoreCase("take a step away")) {
 				character.currentHealth = character.move();
+				if (character.currentHealth <= 0) {
+					gameStatus = false;
+					break LOOP_1;
+				}
 				System.out.println("Ouch! You bump your head on what feels like a metal bar on the ceiling. You didn't realize that the space you were in was so small. You grope around your surroundings in hopes that you can find something that will help you out of this mess. Your hands brush against something that feels like a switch. You brace yourself for the worst and flip it.\nImmediately, the room gets flooded with light.\nYoulook around at your surroundings and realize that you can only take one step in each direction. You start hyperventilating due to your claustrophobia until you notice that there is a tool kit in one of the corners.\nYou open the tool kit, hoping to find something that will help you escape, and find: a SCREWDRIVER, a pair of SCISSORS, and a CROWBAR.\nWhat do you want to grab?\n");
 				
 				input = in.nextLine();
@@ -447,14 +487,26 @@ public class Main {
 					}
 					if (input.equalsIgnoreCase("screwdriver")) {
 						character.currentHealth = character.move();
+						if (character.currentHealth <= 0) {
+							gameStatus = false;
+							break LOOP_1;
+						}
 						System.out.println("You start attacking a wall with the screwdriver. However, you soon realize that your attack isn't doing anything to the door. Why is it even here?! ~.~ Oh well... Guess it's time to try something else.\n");
 					}
 					else if (input.equalsIgnoreCase("scissors")) {
 						character.currentHealth = character.move();
+						if (character.currentHealth <= 0) {
+							gameStatus = false;
+							break LOOP_1;
+						}
 						System.out.println("You start attacking a wall with the scissors. However, you soon realize that your attack isn't doing anything to the door. Why is it even here?! ~.~ Oh well... Guess it's time to try something else.\n");
 					}
 					else if (input.equalsIgnoreCase("crowbar")) {
 						character.currentHealth = character.move();
+						if (character.currentHealth <= 0) {
+							gameStatus = false;
+							break LOOP_1;
+						}
 						System.out.println("You start attacking a wall with the crowbar with all of your strength. After some struggle, you finally manage to get out of your entrapment! However, your victory is short lived as you notice that you are inside a maze of a shapeship, filled with winding corridors and thousands of rooms.\n");
 						next = false;
 					}
@@ -499,6 +551,7 @@ public class Main {
 			System.out.println ("                                                                Level 3");
 			System.out.println ("--------------------------------------------------------------------------------------------------------------------------------------------");
 			checked = false;
+			next = true;
 			
 			//System.out.println("Location: Inside the spaceship prison cell");
 			System.out.println("You find yourself in a long hallway. There is a guard standing near a door who seems like he is dozing off. \"That room must be important if it has a guard in front of it...\" you think to yourself as you approach it.");
@@ -529,291 +582,204 @@ public class Main {
 			}
 			if (input.equalsIgnoreCase("scream")) {
 				character.currentHealth = character.move();
-				System.out.println("\nThe guard wakes up with a jolt and attacks you. You are quickly overpowered by the guard who then proceeds to eleminate the threat, you.\n");
+				if (character.currentHealth <= 0) {
+					gameStatus = false;
+					break LOOP_3;
+				}
+				System.out.println("\nThe guard wakes up with a jolt and attacks you. You are quickly overpowered by the guard who proceeds to eleminate the threat, you.");
 				gameStatus = false;
 				break LOOP_3;
 			}
 			else if (input.equalsIgnoreCase("surprise attack")) {
 				character.currentHealth = character.move();
-				System.out.println("You quietly sneak over to the guard and whack them over their head with both hands as hard as you can, hoping that it is enough to render them unconscious.\nWith a groan, the guard slumps down onto the floor and you quickly go through the door.");
-				System.out.println("You look around your surroundings ");
+				if (character.currentHealth <= 0) {
+					gameStatus = false;
+					break LOOP_3;
+				}
+				System.out.println("\nYou quietly sneak over to the guard and whack them over their head with both hands as hard as you can, hoping that it is enough to render them unconscious. With a groan, the guard slumps down onto the floor.");
+				System.out.println("You sigh in relief and stare down at the guard. You can see something sticking out of their pocket and debate whether or not you want to GRAB THE ITEM or JUST LEAVE.");
+				System.out.println("You can see the guard beginning to stir and quickly decide that you want to...");
+				next = true;
+				
+				while (next) {
+					input = in.nextLine();
+					// Always call the following 11 lines after every input
+					while (statusCheck(input)) {
+						status (input, character);
+						if (character.numPotions > 0) {
+							System.out.println("Would you like to drink a potion? YES or NO?");
+							input = in.nextLine();
+							if (input.equalsIgnoreCase("yes")) {
+								character.currentHealth = character.drink();
+								character.numPotions--;
+							}
+							else if (input.equalsIgnoreCase("no")) {
+							}
+							else {
+								System.out.println("Command not recognized. Please try again.\n");
+							}
+						}
+						System.out.println();
+						input = in.nextLine();
+					}
+					if (input.equalsIgnoreCase("just leave")) {
+						next = false;
+						System.out.println("\nYou find yourself in a large room containing a huge holographic picture of Earth being projected above a white, circular table.\nYou quickly snap out of your awestruck state as you hear footsteps and what sounds like voices getting closer to the room. You panic as you quickly hide behind the table. You rack your brains thinking of what the best course of action is. You see a flashing red BUTTON on the control panel in front of you, a GUN next to you, and a DESK behind you. The door to the room slides open as you dive for the...");
+						boolean fail = false;
+						while (!fail) {
+							input = in.nextLine();
+							character.currentHealth = character.move();
+							while (statusCheck(input)) {
+								status (input, character);
+								if (character.numPotions > 0) {
+									System.out.println("Would you like to drink a potion? YES or NO?");
+									input = in.nextLine();
+									if (input.equalsIgnoreCase("yes")) {
+										character.currentHealth = character.drink();
+										character.numPotions--;
+									}
+									else if (input.equalsIgnoreCase("no")) {
+									}
+									else {
+										System.out.println("Command not recognized. Please try again.\n");
+									}
+								}
+								System.out.println();
+								input = in.nextLine();
+							}
+							if (input.equalsIgnoreCase("button")) {
+								if (character.currentHealth <= 0) {
+									gameStatus = false;
+									break LOOP_3;
+								}
+								System.out.println("\nYour hand slaps the button right as the alien guards burst through the door. You are quickly subdued by the guards as the ship begins to give off a piercing noise.\nYou have activated attack mode! The giant lasers in front of the ship begin to power up, gathering dark energy.\nYou watch helplessly, unable to do anything, as the ship's lasers finish powering up and a shot of pure, black energy is shot towards Earth, tearing a hole through the middle of the planet.");
+								System.out.println("You let out an inhumane scream filled with pain, loss, and regret as you realize that you just killed everyone you cared about. You struggle against your captors, screaming out profanity after profanity, swearing to kill them before you hit the floor. Hard.");
+								System.out.println("\nTHUMP! Your eyes shoot open and you find yourself face to face with... your bed...? You look down at yourself and realize that you are on the floor with your legs tangled in your blankets. You let out a sigh of relief as you realize that you must have been having a nightmare. You untangle your legs from your blankets and get back into bed, relieved that it was all a dream...");
+								break LOOP_3;
+							}
+							else if (input.equalsIgnoreCase("gun")) {
+								if (character.currentHealth <= 0) {
+									gameStatus = false;
+									break LOOP_3;
+								}
+								System.out.println("\nYour hand closes around the butt of the gun right as the alien guards burst through the door. You quickly raise your arms and point the gun at the guards and press the trigger, effectively blowing yourself backwards against the wall due to the sheer force of the recoil. As you are tackled by the guards, you notice with satisfaction that at the very least the blast from your gun has taken out one of them.");
+								System.out.println("You laugh and give out a victory shout before you are spun around and a fist meets your face. You grunt in pain as you hit the floor and are met with a kick to the stomach. The aliens seem to be pissed as they take turns punching and kicking you as you curl up into a ball in an attempt to try to protect yourself. The attacks stop and you look up to see a boot coming right at your face. You quickly squeeze your eyes shut right before it makes contact with your face and you feel your body flying through the air before hitting the wall behind you. Hard.");
+								System.out.println("\nTHUMP! Your eyes shoot open and you find yourself face to face with... your bed...? You look down at yourself and realize that you are on the floor with your legs tangled in your blankets. You let out a sigh of relief as you realize that you must have been having a nightmare. You untangle your legs from your blankets and get back into bed, relieved that it was all a dream...");
+								break LOOP_3;
+							}
+							else if (input.equalsIgnoreCase("desk")) {
+								if (character.currentHealth <= 0) {
+									gameStatus = false;
+									break LOOP_3;
+								}
+								System.out.println("\nYou manage to hide next to a desk right as the aliens burst through the door. You shut your eyes and desperately hope that you won't be found. However, your hope fades as you are grabbed by the neck and roughly hauled to your feet. You open your eyes and are met with a fist flying at your face. You quickly squeeze your eyes shut before it makes contact with your face and you feel yourself falling onto the floor.");
+								System.out.println("\nTHUMP! Your eyes shoot open and you find yourself face to face with... your bed...? You look down at yourself and realize that you are on the floor with your legs tangled in your blankets. You let out a sigh of relief as you realize that you must have been having a nightmare. You untangle your legs from your blankets and get back into bed, relieved that it was all a dream...");
+								break LOOP_3;
+							}
+							else {
+								System.out.println("Command not recognized. Please try again.\n");
+								fail = false;
+							}
+						}
+					}
+					else if (input.equalsIgnoreCase("grab the item")) {
+						checked = true;
+						next = false;
+						character.currentHealth = character.hit();
+						// Always call the following 3 lines after every move
+						if (character.currentHealth <= 0) {
+							gameStatus = false;
+							break LOOP_3;
+						}
+						character.numPotions++;
+						System.out.println("\nYou quickly bend over to grab the item from the guard's pocket. However, upon doing so, your hand brushes against their armor and you feel a jolt of electricity passing throughout your body.\nYou cry out from the excruciating pain despite your best efforts not to as you stagger through the door to the next room.\nYou let out a whimper as you lean against the door and you swear that you can feel your body getting weaker by the second.\nWhat feels like hours pass before you feel well enough to get up and move around again. You take this chance to study your surroundings and notice that you are in a large room containing a huge holographic picture of Earth being projected above a white, circular table.\nYou quickly snap out of your awestruck state as you hear footsteps and what sounds like voices getting closer to the room. You panic as you quickly hide behind the table. You rack your brains thinking of what the best course of action is. You see a flashing red BUTTON on the control panel in front of you, a GUN next to you, and a DESK behind you. The door to the room slides open as you dive for the...");
+						boolean fail = false;
+						while (!fail) {
+							input = in.nextLine();
+							// Always call the following 11 lines after every input
+							while (statusCheck(input)) {
+								status (input, character);
+								if (character.numPotions > 0) {
+									System.out.println("Would you like to drink a potion? YES or NO?");
+									input = in.nextLine();
+									if (input.equalsIgnoreCase("yes")) {
+										character.currentHealth = character.drink();
+										character.numPotions--;
+									}
+									else if (input.equalsIgnoreCase("no")) {
+									}
+									else {
+										System.out.println("Command not recognized. Please try again.\n");
+									}
+								}
+								System.out.println();
+								input = in.nextLine();
+							}
+							if (input.equalsIgnoreCase("button")) {
+								character.currentHealth = character.move();
+								if (character.currentHealth <= 0) {
+									gameStatus = false;
+									break LOOP_3;
+								}
+								System.out.println("\nYour hand slaps the button right as the alien guards burst through the door. You are quickly subdued by the guards as the ship begins to give off a piercing noise.\nYou have activated attack mode! The giant lasers in front of the ship begin to power up, gathering dark energy.\nYou watch helplessly, unable to do anything, as the ship's lasers finish powering up and a shot of pure, black energy is shot towards Earth, tearing a hole through the middle of the planet.");
+								System.out.println("You let out an inhumane scream filled with pain, loss, and regret as you realize that you just killed everyone you cared about. You struggle against your captors, screaming out profanity after profanity, swearing to kill them before you hit the floor. Hard.");
+								System.out.println("\nTHUMP! Your eyes shoot open and you find yourself face to face with... your bed...? You look down at yourself and realize that you are on the floor with your legs tangled in your blankets. You let out a sigh of relief as you realize that you must have been having a nightmare. You untangle your legs from your blankets and get back into bed, relieved that it was all a dream...");
+								break LOOP_3;
+							}
+							else if (input.equalsIgnoreCase("gun")) {
+								character.currentHealth = character.move();
+								if (character.currentHealth <= 0) {
+									gameStatus = false;
+									break LOOP_3;
+								}
+								System.out.println("\nYour hand closes around the butt of the gun right as the alien guards burst through the door. You quickly raise your arms and point the gun at the guards and press the trigger, effectively blowing yourself backwards against the wall due to the sheer force of the recoil. As you are tackled by the guards, you notice with satisfaction that at the very least the blast from your gun has taken out one of them.");
+								System.out.println("You laugh and give out a victory shout before you are spun around and a fist meets your face. You grunt in pain as you hit the floor and are met with a kick to the stomach. The aliens seem to be pissed as they take turns punching and kicking you as you curl up into a ball in an attempt to try to protect yourself. The attacks stop and you look up to see a boot coming right at your face. You quickly squeeze your eyes shut right before it makes contact with your face and you feel your body flying through the air before hitting the wall behind you. Hard.");
+								System.out.println("\nTHUMP! Your eyes shoot open and you find yourself face to face with... your bed...? You look down at yourself and realize that you are on the floor with your legs tangled in your blankets. You let out a sigh of relief as you realize that you must have been having a nightmare. You untangle your legs from your blankets and get back into bed, relieved that it was all a dream...");
+								break LOOP_3;
+							}
+							else if (input.equalsIgnoreCase("desk")) {
+								character.currentHealth = character.move();
+								if (character.currentHealth <= 0) {
+									gameStatus = false;
+									break LOOP_3;
+								}
+								System.out.println("\nYou manage to hide next to a desk right as the aliens burst through the door. You shut your eyes and desperately hope that you won't be found. However, your hope fades as you are grabbed by the neck and roughly hauled to your feet. You open your eyes and are met with a fist flying at your face. You quickly squeeze your eyes shut before it makes contact with your face and you feel yourself falling onto the floor.");
+								System.out.println("\nTHUMP! Your eyes shoot open and you find yourself face to face with... your bed...? You look down at yourself and realize that you are on the floor with your legs tangled in your blankets. You let out a sigh of relief as you realize that you must have been having a nightmare. You untangle your legs from your blankets and get back into bed, relieved that it was all a dream...");
+								break LOOP_3;
+							}
+							else {
+								System.out.println("Command not recognized. Please try again.");
+								fail = false;
+							}
+						}
+					}
+					else {
+						System.out.println("Command not recognized. Please try again.\n");
+					}
+				}
 			}
 			else if (input.equalsIgnoreCase("sneak inside")) {
-				
-			}
-/*
-			else if (input.equalsIgnoreCase("check out the strange noises")) {
 				character.currentHealth = character.move();
-				System.out.println("As you walk towards the strange noises, you begin to recognize them. It's the sound that is created when two metal or steel objects are being banged together. You soon find yourself in front of a door with light streaming out of it. You cautiously open the door and peek inside the room.\nYou see rows of gigantic cylindrical containers lined against the walls, with their lids opening and closing. You also notice that there are three items laying partially hideen behind one of the containers and beyond one of the containers, a metal door. You walk into the room and try to open the door, only to find out that it's locked. You go back to the items and find: a small BOX, a SCREWDRIVER, a pair of SCISSORS, and a CROWBAR.\nWhat do you want to grab?\n");
-				
-				input = in.nextLine();
-				next = true;
-				while (next) {
-					// Always call the following 11 lines after every input
-					while (statusCheck(input)) {
-						status (input, character);
-						if (character.numPotions > 0) {
-							System.out.println("Would you like to drink a potion? YES or NO?");
-							input = in.nextLine();
-							if (input.equalsIgnoreCase("yes")) {
-								character.currentHealth = character.drink();
-								character.numPotions--;
-							}
-							else if (input.equalsIgnoreCase("no")) {
-							}
-							else {
-								System.out.println("Command not recognized. Please try again.\n");
-							}
-						}
-						System.out.println();
-						input = in.nextLine();
-					}
-					if (input.equalsIgnoreCase("box")) {
-						character.currentHealth = character.move();
-						if (checked == false) {
-							character.currentHealth = character.move();
-							checked = true;
-							// Always call the following 3 lines after every move
-							if (character.currentHealth <= 0) {
-								gameStatus = false;
-								break LOOP_2;
-							}
-							System.out.println("You open the box and find a potion.\nYOU HAVE OBTAINED A POTION!\n");
-							character.numPotions++;
-						}
-						else {
-							System.out.println("You open the box and find nothing.\n");
-						}
-						System.out.println("You look back over at the remaining items. What do you want to grab?\n");
-						input = in.nextLine();
-					}
-					// Always call the following 11 lines after every input
-					while (statusCheck(input)) {
-						status (input, character);
-						if (character.numPotions > 0) {
-							System.out.println("Would you like to drink a potion? YES or NO?");
-							input = in.nextLine();
-							if (input.equalsIgnoreCase("yes")) {
-								character.currentHealth = character.drink();
-								character.numPotions--;
-							}
-							else if (input.equalsIgnoreCase("no")) {
-							}
-							else {
-								System.out.println("Command not recognized. Please try again.\n");
-							}
-						}
-						System.out.println();
-						input = in.nextLine();
-					}
-					if (input.equalsIgnoreCase("screwdriver")) {
-						character.currentHealth = character.move();
-						System.out.println("After struggling with the screwdriver, you finally manage to get out of your entrapment! However, your victory is short lived as you notice that you are inside a maze of a shapeship, filled with winding corridors and thousands of rooms.\n");
-						next = false;
-					}
-					else if (input.equalsIgnoreCase("scissors")) {
-						character.currentHealth = character.move();
-						System.out.println("You start attacking the door hinges with the scissors. However, you soon realize that your attack isn't doing anything to the door. Why is it even here?! ~.~ Oh well... Guess it's time to try something else.\n");
-					}
-					else if (input.equalsIgnoreCase("crowbar")) {
-						character.currentHealth = character.move();
-						System.out.println("You start attacking the door with the crowbar. However, you soon realize that your attack isn't doing anything to the bubble. Why is it even here?! ~.~ Oh well... Guess it's time to try something else.\n");
-					}
-					else {
-						System.out.println("Command not recognized. Please try again.\n");
-					}
-					input = in.nextLine();
+				if (character.currentHealth <= 0) {
+					gameStatus = false;
+					break LOOP_3;
 				}
-			}
-			else if (input.equalsIgnoreCase("take a step away from where you are currently standing")) {
-				character.currentHealth = character.move();
-				System.out.println("Ouch! You bump your head on what feels like a metal bar on the ceiling. You didn't realize that the space you were in was so small. You grope around your surroundings in hopes that you can find something that will help you out of this mess. Your hands brush against something that feels like a switch. You brace yourself for the worst and flip it.\nImmediately, the room gets flooded with light.\nYoulook around at your surroundings and realize that you can only take one step in each direction. You start hyperventilating due to your claustrophobia until you notice that there is a tool kit in one of the corners.\nYou open the tool kit, hoping to find something that will help you escape, and find: a SCREWDRIVER, a pair of SCISSORS, and a CROWBAR.\nWhat do you want to grab?\n");
-				
-				input = in.nextLine();
-				next = true;
-				while (next) {
-					// Always call the following 11 lines after every input
-					while (statusCheck(input)) {
-						status (input, character);
-						if (character.numPotions > 0) {
-							System.out.println("Would you like to drink a potion? YES or NO?");
-							input = in.nextLine();
-							if (input.equalsIgnoreCase("yes")) {
-								character.currentHealth = character.drink();
-								character.numPotions--;
-							}
-							else if (input.equalsIgnoreCase("no")) {
-							}
-							else {
-								System.out.println("Command not recognized. Please try again.\n");
-							}
-						}
-						System.out.println();
-						input = in.nextLine();
-					}
-					if (input.equalsIgnoreCase("screwdriver")) {
-						character.currentHealth = character.move();
-						System.out.println("You start attacking a wall with the screwdriver. However, you soon realize that your attack isn't doing anything to the door. Why is it even here?! ~.~ Oh well... Guess it's time to try something else.\n");
-					}
-					else if (input.equalsIgnoreCase("scissors")) {
-						character.currentHealth = character.move();
-						System.out.println("You start attacking a wall with the scissors. However, you soon realize that your attack isn't doing anything to the door. Why is it even here?! ~.~ Oh well... Guess it's time to try something else.\n");
-					}
-					else if (input.equalsIgnoreCase("crowbar")) {
-						character.currentHealth = character.move();
-						System.out.println("You start attacking a wall with the crowbar with all of your strength. After some struggle, you finally manage to get out of your entrapment! However, your victory is short lived as you notice that you are inside a maze of a shapeship, filled with winding corridors and thousands of rooms.\n");
-						next = false;
-					}
-					else {
-						System.out.println("Command not recognized. Please try again.\n");
-					}
-					input = in.nextLine();
-				}
+				System.out.println("\nYou quietly sneak around the guard and reach your hand out for the door handle. You carefully turn the handle and open the door, only to realize that doing so has created a loud noise.\nThe guard's eyes quickly shoot open and sees you right away. You are quickly overpowered by the guard who proceeds to eleminate the threat, you.");
+				gameStatus = false;
+				break LOOP_3;
 			}
 			else {
-				while (!input.equalsIgnoreCase("walk towards the glowing light") || !input.equalsIgnoreCase("check out the strange noises") || !input.equalsIgnoreCase("take a step away from where you are currently standing") || !input.equals("status")) {
-					System.out.println("Command not recognized. Please try again.\n");
-					input = in.nextLine();
-					while (statusCheck(input)) {
-						status (input, character);
-						if (character.numPotions > 0) {
-							System.out.println("Would you like to drink a potion? YES or NO?");
-							input = in.nextLine();
-							if (input.equalsIgnoreCase("yes")) {
-								character.currentHealth = character.drink();
-								character.numPotions--;
-							}
-							else if (input.equalsIgnoreCase("no")) {
-							}
-							else {
-								System.out.println("Command not recognized. Please try again.\n");
-							}
-						}
-						System.out.println();
-						input = in.nextLine();
-					}
-					break;
-				}
-				continue LOOP_2;
+				System.out.println("Command not recognized. Please try again.\n");
+				input = in.nextLine();
 			}
-			break LOOP_2;
-*/
 		}
-	
-/*		
-        character.currentHealth = character.move();
-		// Always call the following 3 lines after every move
-		if (character.currentHealth <= 0) {
-			gameStatus = false;
-			break LOOP_1;
-		}
-		System.out.println("What do you want to do now?");
-		input = in.nextLine();
-        // Always call the following 11 lines after every input
-        while (statusCheck(input)) {
-            status (input, character);
-			if (character.numPotions > 0) {
-						input = in.nextLine();
-				System.out.println("Would you like to drink a potion? YES or NO?");
-				if (input.equalsIgnoreCase("yes")) {
-					character.currentHealth = character.drink();
-					character.numPotions--;
-				}
-				else if (input.equalsIgnoreCase("no")) {
-				}
-				else {
-					System.out.println("Command not recognized. Please try again.\n");
-				}
-			}
-            input = in.nextLine();
-					System.out.println();
-        }
-*/
-/*
-        // Level 2
-        
-	System.out.println("What do you want to do now?");
-        input = in.nextLine();
-        // Always call the following 4 lines after every input
-        while (statusCheck(input)) {
-            status (input, character);
-            input = in.nextLine();
-        }
-        character.currentHealth = character.move();
-	System.out.println("What do you want to do now?");
-	input = in.nextLine();
-        // Always call the following 4 lines after every input
-        while (statusCheck(input)) {
-            status (input, character);
-            input = in.nextLine();
-        }
-        character.currentHealth = character.move();
-	
-        // Level 3
-        System.out.println("--------------------------------------------------------------------------------------------------------------------------------------------");
-        System.out.println("                                                                Level 3");
-        System.out.println("--------------------------------------------------------------------------------------------------------------------------------------------");
-        System.out.println("What do you want to do now?");
-        input = in.nextLine();
-        // Always call the following 4 lines after every input
-        while (statusCheck(input)) {
-            status (input, character);
-            input = in.nextLine();
-        }
-        character.currentHealth = character.move();
-	System.out.println("What do you want to do now?");
-	input = in.nextLine();
-        // Always call the following 4 lines after every input
-        while (statusCheck(input)) {
-            status (input, character);
-            input = in.nextLine();
-        }
-        character.currentHealth = character.move();
-	
-        // Level 4
-        System.out.println("--------------------------------------------------------------------------------------------------------------------------------------------");
-        System.out.println("                                                                Level 4");
-        System.out.println("--------------------------------------------------------------------------------------------------------------------------------------------");
-        System.out.println("What do you want to do now?");
-        input = in.nextLine();
-        // Always call the following 4 lines after every input
-        while (statusCheck(input)) {
-            status (input, character);
-            input = in.nextLine();
-        }
-        character.currentHealth = character.move();
-	System.out.println("What do you want to do now?");
-	input = in.nextLine();
-        // Always call the following 4 lines after every input
-        while (statusCheck(input)) {
-            status (input, character);
-            input = in.nextLine();
-        }
-        character.currentHealth = character.move();
-	
-        // Level 5 (Boss Fight)
-        System.out.println("--------------------------------------------------------------------------------------------------------------------------------------------");
-        System.out.println("                                                                Level 5");
-        System.out.println("--------------------------------------------------------------------------------------------------------------------------------------------");
-        System.out.println("What do you want to do now?");
-        input = in.nextLine();
-        // Always call the following 4 lines after every input
-        while (statusCheck(input)) {
-            status (input, character);
-            input = in.nextLine();
-        }
-        character.currentHealth = character.move();
-		System.out.println("What do you want to do now?");
-		input = in.nextLine();
-        // Always call the following 4 lines after every input
-        while (statusCheck(input)) {
-            status (input, character);
-            input = in.nextLine();
-        }
-        character.currentHealth = character.move();
-*/
+		
+		// Game Over
 		if (!gameStatus) {
 			System.out.println("You ran out of HP. Better luck next time!\nGAME OVER!");
+		}
+		else {
+			System.out.println("You did it! You managed to survive!\nAchievement Unlocked!\nSURVIVOR");
 		}
 	}
     // Method explains what happens if the player types in "status" during any time in the game

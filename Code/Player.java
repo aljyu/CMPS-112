@@ -38,7 +38,7 @@ public class Player{
 	
 	// Method to state what happens when the player gets hit (by the boss)
 	public static int hit() {
-		return (currentHealth - 10);
+		return (currentHealth - 20);
 	}
 	
 	// Method to increase HP using a potion
