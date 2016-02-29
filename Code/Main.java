@@ -22,6 +22,7 @@ public class Main {
 		boolean checked = false;
 		boolean next;
 
+/*
 		if (gameStatus) {
 			System.out.println ("--------------------------------------------------------------------------------------------------------------------------------------------");
 			System.out.println ("                                                                Level 1");
@@ -128,6 +129,9 @@ public class Main {
 						input = in.nextLine();
 					}
 					continue LOOP_1;
+				}
+				else {
+					System.out.println("Command not recognized. Please try again.\n");
 				}
 				continue LOOP_1;
 			}
@@ -259,7 +263,7 @@ public class Main {
 				continue LOOP_1;
 			}
 		}
-		
+*/		
 
 		if (gameStatus) {
 			System.out.println ("\n--------------------------------------------------------------------------------------------------------------------------------------------");
