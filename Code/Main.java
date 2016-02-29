@@ -9,7 +9,7 @@ public class Main {
         String playerName = in.nextLine();
         System.out.println ("\nHello " + playerName + "!");
         
-        Player character = new Player (/*input, */100, 100, 5, 0, 30);
+        Player character = new Player (100, 100, 5, 0, 30);
         System.out.println ("You currently have " + character.playerCurrentHP() + " HP and " + character.playerCurrentPotions() + " potions.");
         System.out.println ("If you wish to view these stats during any point of the game, type in \"Status\".");
 		System.out.println("If you wish to drink a potion, first type in \"Status\" and follow the instructions given.");
@@ -39,8 +39,12 @@ public class Main {
 		}
 		input = in.nextLine();
 		
+		while (gameStatus) {
+			
+		}
+		
 
-
+/*
 		if (gameStatus) {
 			System.out.println ("\n--------------------------------------------------------------------------------------------------------------------------------------------");
 			System.out.println ("                                                                Level 2");
@@ -52,31 +56,6 @@ public class Main {
 		}
 		input = in.nextLine();
 		
-/*
-		LOOP_1: // Loop 1
-		while (gameStatus) {
-			// Always call the following 11 lines after every input
-			while (statusCheck(input)) {
-				status (input, character);
-				if (character.numPotions > 0) {
-					System.out.println("Would you like to drink a potion? YES or NO?");
-					input = in.nextLine();
-					if (input.equalsIgnoreCase("yes")) {
-						character.currentHealth = character.drink();
-						character.numPotions--;
-					}
-					else if (input.equalsIgnoreCase("no")) {
-					}
-					else {
-						System.out.println("Command not recognized. Please try again.\n");
-					}
-				}
-				System.out.println();
-				input = in.nextLine();
-			}
-			
-		}
-*/		
 		
 		LOOP_2: // Loop 2
 		while (gameStatus) {
@@ -368,8 +347,7 @@ public class Main {
 			System.out.println("Do you want to SCREAM and hope that the loud noise wakes you up from what are hoping is a dream, SURPRISE ATTACK the guard in hopes that your attack will render them unconscious, or SNEAK INSIDE the room?");
 		}
 		input = in.nextLine();
-
-/*		
+		
 		LOOP_3: // Loop 3
 		while (gameStatus) {
 			// Always call the following 11 lines after every input
@@ -584,7 +562,6 @@ public class Main {
 				input = in.nextLine();
 			}
 		}
-*/		
 		
 		// Game Over
 		if (!gameStatus) {
