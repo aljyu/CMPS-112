@@ -54,7 +54,7 @@ public class Main {
 					else if (input.equalsIgnoreCase("no")) {
 					}
 					else {
-						System.out.println("Command not recognized. Please try again.\n");
+						System.out.println("#1)Command not recognized. Please try again.\n");
 					}
 				}
 				System.out.println();
@@ -85,7 +85,7 @@ public class Main {
 						else if (input.equalsIgnoreCase("no")) {
 						}
 						else {
-							System.out.println("Command not recognized. Please try again.\n");
+							System.out.println("#2)Command not recognized. Please try again.\n");
 						}
 					}
 					System.out.println();
@@ -121,7 +121,7 @@ public class Main {
 							else if (input.equalsIgnoreCase("no")) {
 							}
 							else {
-								System.out.println("Command not recognized. Please try again.\n");
+								System.out.println("#3)Command not recognized. Please try again.\n");
 							}
 						}
 						System.out.println();
@@ -153,7 +153,7 @@ public class Main {
 						else if (input.equalsIgnoreCase("no")) {
 						}
 						else {
-							System.out.println("Command not recognized. Please try again.\n");
+							System.out.println("#4)Command not recognized. Please try again.\n");
 						}
 					}
 					System.out.println();
@@ -184,7 +184,7 @@ public class Main {
 							else if (input.equalsIgnoreCase("no")) {
 							}
 							else {
-								System.out.println("Command not recognized. Please try again.\n");
+								System.out.println("#5)Command not recognized. Please try again.\n");
 							}
 						}
 						System.out.println();
@@ -216,7 +216,7 @@ public class Main {
 						else if (input.equalsIgnoreCase("no")) {
 						}
 						else {
-							System.out.println("Command not recognized. Please try again.\n");
+							System.out.println("#6)Command not recognized. Please try again.\n");
 						}
 					}
 					System.out.println();
@@ -233,8 +233,8 @@ public class Main {
 				break LOOP_1;
 			}
 			else {
-				while (!input.equalsIgnoreCase("CHECK OUT THE KITCHEN") || !input.equalsIgnoreCase("CHECK OUT THE DOG HOUSE") || !input.equalsIgnoreCase("CHECK OUT THE BACKYARD") || !input.equals("status")) {
-					System.out.println("Command not recognized. Please try again.\n");
+				while (!input.equalsIgnoreCase("KITCHEN") || !input.equalsIgnoreCase("DOG HOUSE") || !input.equalsIgnoreCase("BACKYARD") || !input.equals("status")) {
+					System.out.println("#7)Command not recognized. Please try again.\n");
 					input = in.nextLine();
 					while (statusCheck(input)) {
 						status (input, character);
@@ -248,7 +248,7 @@ public class Main {
 							else if (input.equalsIgnoreCase("no")) {
 							}
 							else {
-								System.out.println("Command not recognized. Please try again.\n");
+								System.out.println("#8)Command not recognized. Please try again.\n");
 							}
 						}
 						System.out.println();
