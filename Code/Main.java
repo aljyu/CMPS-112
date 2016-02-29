@@ -343,6 +343,7 @@ public class Main {
 						}
 						System.out.println("After struggling with the scissors, you finally manage to get out of your entrapement! However, your victory is short lived as you notice that you are inside a maze of a shapeship, filled with winding corridors and thousands of rooms.\n");
 						next = false;
+						break LOOP_2;
 					}
 					else if (input.equalsIgnoreCase("crowbar")) {
 						character.currentHealth = character.move();
@@ -437,6 +438,7 @@ public class Main {
 						}
 						System.out.println("After struggling with the screwdriver, you finally manage to get out of your entrapment! However, your victory is short lived as you notice that you are inside a maze of a shapeship, filled with winding corridors and thousands of rooms.\n");
 						next = false;
+						break LOOP_2;
 					}
 					else if (input.equalsIgnoreCase("scissors")) {
 						character.currentHealth = character.move();
@@ -514,6 +516,7 @@ public class Main {
 						}
 						System.out.println("You start attacking a wall with the crowbar with all of your strength. After some struggle, you finally manage to get out of your entrapment! However, your victory is short lived as you notice that you are inside a maze of a shapeship, filled with winding corridors and thousands of rooms.\n");
 						next = false;
+						break LOOP_2;
 					}
 					else {
 						System.out.println("Command not recognized. Please try again.\n");
