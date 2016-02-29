@@ -2,11 +2,11 @@ module Main where
 import Player
 
 
-class Status a where
-	stat :: a -> String
+--class Status a where
+--	stat :: a -> String
 
-instance  Status Char where
-	stat _ =  "Would you like to drink a potion? YES or NO?"
+--instance  Status Char where
+--	stat _ =  "Would you like to drink a potion? YES or NO?"
 	
 
 main = do  
@@ -41,45 +41,52 @@ main = do
 	putStrLn("As you begin to walk out of your room, the light behind you begins to slowly fade away.\n")
 	putStrLn("\"Alright\" you think to yourself \"Where should I check out first? Should I CHECK OUT THE KITCHEN, CHECK OUT THE DOG HOUSE, or CHECK OUT THE BACKYARD?\"")
 
-	--LOOP1
+	
 	--x <- getLine
 	--stat x
 	--check if input calls status
-
-	input <- geLine
-	let inp = read input :: String
-	if (inp == "DOG HOUSE" ) 
+	--LOOP1
+	input <- getLine
+	--let inp = read input :: String
+	if (input == "DOG HOUSE" ) 
 		then do
 		--move1 = move player 
 		-- if current HP <= 0 then gamestat false
 		putStrLn("\n\"Blue?\" you call out as you walk out the front door towards the dog house.");
 		putStrLn("You hear your dog, Blue, trotting towards you with something in his mouth.");
-		putStrLn("\"Should I TAKE THE ITEM, CHECK OUT THE KITCHEN, or CHECK OUT THE BACKYARD?\" you wonder to yourself as you absent-mindedly pet Blue on the head.");
-		--getLine
+		putStrLn("\"Should I take the ITEM, CHECK OUT THE KITCHEN, or CHECK OUT THE BACKYARD?\" you wonder to yourself as you absent-mindedly pet Blue on the head.");
+		input <- getLine
+	--check if input calls status
+		if (input == "ITEM" ) 
+			then do
+			--if current HP <= 0 then gamestat false		
+			putStrLn("You remove the item from Blue's mouth.\nYOU HAVE OBTAINED A POTION!")
+			--potions++
+		else do
+			putStrLn "You remove the item from Blue's mouth only to find out that it is an old tennis ball.\n"
+			
+		putStrLn "Do you want to check out the KITCHEN or check out the BACKYARD?"
+		input <- getLine
+			--check if input calls status
+		if (input == "KITCHEN" )
+			then do 
+			-- if current HP <= 0 then gamestat false		
+			putStrLn("\nYou walk into the kitchen.\n\"Alright\" you think to yourself \"Do I want to LOOK INSIDE THE SINK, CHECK OUT THE DOG HOUSE, or CHECK OUT THE BACKYARD");
+			input <- getLine
 
-	----check if input calls status
-	----if (input == "TAKE THE ITEM" ) then currentHP - 5
-	--	-- if current HP <= 0 then gamestat false		
-	--putStrLn("You remove the item from Blue's mouth only to find out that it is an old tennis ball.\n")
-	--putStrLn("Do you want to CHECK OUT THE KITCHEN or CHECK OUT THE BACKYARD?");
+			--check if input calls status
+			if (input == "SINK" ) 
+				then do
+				--if current HP <= 0 then gamestat false		
+				putStrLn "\nYou look over to your sink and find a bunch of dirty dishes. \"I should've cleaned those hours ago...\" you think to yourself"
+				putStrLn "\"Do I want to check out the DOG HOUSE, or check out the BACKYARD\"?\n"
+				-- if current HP <= 0 then gamestat false			
+				--input <- getLine
 
-	----check if input calls status
-	----if (input == "CHECK OUT THE KITCHEN " ) then currentHP - 5
-	--	-- if current HP <= 0 then gamestat false		
-	--putStrLn("\nYou walk into the kitchen.\n\"Alright\" you think to yourself \"Do I want to LOOK INSIDE THE SINK, CHECK OUT THE DOG HOUSE, or CHECK OUT THE BACKYARD");
-
-	----check if input calls status
-	----if (input == "LOOK INSIDE THE SINK " ) then currentHP - 5
-	--	-- if current HP <= 0 then gamestat false			
-
-	--putStrLn("\nYou look over to your sink and find a bunch of dirty dishes. \"I should've cleaned those hours ago...\" you think to yourself");
-	--putStrLn("\"Do I want to CHECK OUT THE DOG HOUSE, or CHECK OUT THE BACKYARD\"?\n");
-
-	----check if input calls status
-	----if (input == "LOOK INSIDE THE SINK " ) then currentHP - 5
-	--	-- if current HP <= 0 then gamestat false	
-
-	----break LOOP1
-	----else 
-	--	--if (input == "LOOK INSIDE THE SINK " ) then currentHP - 5
-	--	-- if current HP <= 0 then gamestat false
+			else putStrLn ""
+		else do 	
+			putStrLn "\nYou walk outside to the backyard where you are immediately caught in a tractor beam."
+			putStrLn "Your thoughts immediately go into overdrive mode, debating whether it would be better to STRUGGLE against the beam or just COMPLY."
+			--input <- getLine
+	
+		else putStrLn ""
