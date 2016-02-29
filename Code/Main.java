@@ -72,42 +72,12 @@ public class Main {
 				System.out.println("You hear your dog, Blue, trotting towards you with something in his mouth.");
 				System.out.println("\"Should I take the ITEM, check out the KITCHEN, or check out the BACKYARD?\" you wonder to yourself as you absent-mindedly pet Blue on the head.");
 				input = in.nextLine();
-				// Always call the following 11 lines after every input
-				while (statusCheck(input)) {
-					status (input, character);
-					if (character.numPotions > 0) {
-						System.out.println("Would you like to drink a potion? YES or NO?");
+				
+				while (true) {
+					if (!input.equalsIgnoreCase("item") || !input.equalsIgnoreCase("kitchen") || !input.equalsIgnoreCase("backyard") || !input.equalsIgnoreCase("status")) {
+						System.out.println("#10?)Command not recognized. Please try again.\n");
 						input = in.nextLine();
-						if (input.equalsIgnoreCase("yes")) {
-							character.currentHealth = character.drink();
-							character.numPotions--;
-						}
-						else if (input.equalsIgnoreCase("no")) {
-						}
-						else {
-							System.out.println("#2)Command not recognized. Please try again.\n");
-						}
 					}
-					System.out.println();
-					input = in.nextLine();
-				}
-				if (input.equalsIgnoreCase("item")) {
-					if (checked == false) {
-						checked = true;
-						character.currentHealth = character.move();
-						// Always call the following 3 lines after every move
-						if (character.currentHealth <= 0) {
-							gameStatus = false;
-							break LOOP_1;
-						}
-						System.out.println("You remove the item from Blue's mouth.\nYOU HAVE OBTAINED A POTION!\n");
-						character.numPotions++;
-					}
-					else {
-						System.out.println("You remove the item from Blue's mouth only to find out that it is an old tennis ball.\n");
-					}
-					System.out.println("Do you want to CHECK OUT THE KITCHEN or CHECK OUT THE BACKYARD?");
-					input = in.nextLine();
 					// Always call the following 11 lines after every input
 					while (statusCheck(input)) {
 						status (input, character);
@@ -121,15 +91,51 @@ public class Main {
 							else if (input.equalsIgnoreCase("no")) {
 							}
 							else {
-								System.out.println("#3)Command not recognized. Please try again.\n");
+								System.out.println("#2)Command not recognized. Please try again.\n");
 							}
 						}
 						System.out.println();
 						input = in.nextLine();
 					}
-					continue LOOP_1;
+					if (input.equalsIgnoreCase("item")) {
+						if (checked == false) {
+							checked = true;
+							character.currentHealth = character.move();
+							// Always call the following 3 lines after every move
+							if (character.currentHealth <= 0) {
+								gameStatus = false;
+								break LOOP_1;
+							}
+							System.out.println("You remove the item from Blue's mouth.\nYOU HAVE OBTAINED A POTION!\n");
+							character.numPotions++;
+						}
+						else {
+							System.out.println("You remove the item from Blue's mouth only to find out that it is an old tennis ball.\n");
+						}
+						System.out.println("Do you want to CHECK OUT THE KITCHEN or CHECK OUT THE BACKYARD?");
+						input = in.nextLine();
+						// Always call the following 11 lines after every input
+						while (statusCheck(input)) {
+							status (input, character);
+							if (character.numPotions > 0) {
+								System.out.println("Would you like to drink a potion? YES or NO?");
+								input = in.nextLine();
+								if (input.equalsIgnoreCase("yes")) {
+									character.currentHealth = character.drink();
+									character.numPotions--;
+								}
+								else if (input.equalsIgnoreCase("no")) {
+								}
+								else {
+									System.out.println("#3)Command not recognized. Please try again.\n");
+								}
+							}
+							System.out.println();
+							input = in.nextLine();
+						}
+						continue LOOP_1;
+					}
 				}
-				continue LOOP_1;
 			}
 			else if (input.equalsIgnoreCase("kitchen")) {
 				character.currentHealth = character.move();
@@ -208,34 +214,41 @@ public class Main {
 				System.out.println("\nYou walk outside to the backyard where you are immediately caught in a tractor beam.");
 				System.out.println("Your thoughts immediately go into overdrive mode, debating whether it would be better to STRUGGLE against the beam or JUST COMPLY.");
 				input = in.nextLine();
-				// Always call the following 11 lines after every input
-				while (statusCheck(input)) {
-					status (input, character);
-					if (character.numPotions > 0) {
-						System.out.println("Would you like to drink a potion? YES or NO?");
+				
+				while (true) {
+					if (!input.equalsIgnoreCase("struggle") || !input.equalsIgnoreCase("just comply") || !input.equalsIgnoreCase("status")) {
+						System.out.println("#11?)Command not recognized. Please try again.\n");
 						input = in.nextLine();
-						if (input.equalsIgnoreCase("yes")) {
-							character.currentHealth = character.drink();
-							character.numPotions--;
-						}
-						else if (input.equalsIgnoreCase("no")) {
-						}
-						else {
-							System.out.println("#6)Command not recognized. Please try again.\n");
-						}
 					}
-					System.out.println();
-					input = in.nextLine();
+					// Always call the following 11 lines after every input
+					while (statusCheck(input)) {
+						status (input, character);
+						if (character.numPotions > 0) {
+							System.out.println("Would you like to drink a potion? YES or NO?");
+							input = in.nextLine();
+							if (input.equalsIgnoreCase("yes")) {
+								character.currentHealth = character.drink();
+								character.numPotions--;
+							}
+							else if (input.equalsIgnoreCase("no")) {
+							}
+							else {
+								System.out.println("#6)Command not recognized. Please try again.\n");
+							}
+						}
+						System.out.println();
+						input = in.nextLine();
+					}
+					if (input.equalsIgnoreCase("struggle")) {
+						character.currentHealth = character.move();
+						System.out.println("Your struggles are useless as you feel yourself being beamed up and everything fades to black.");
+					}
+					else {
+						character.currentHealth = character.move();
+						System.out.println("\nYou relax your body and as you feel yourself being beamed up, everything fades to black.");
+					}
+					break LOOP_1;
 				}
-				if (input.equalsIgnoreCase("struggle")) {
-					character.currentHealth = character.move();
-					System.out.println("Your struggles are useless as you feel yourself being beamed up and everything fades to black.");
-				}
-				else {
-					character.currentHealth = character.move();
-					System.out.println("\nYou relax your body and as you feel yourself being beamed up, everything fades to black.");
-				}
-				break LOOP_1;
 			}
 			else {
 				System.out.println("#7)Command not recognized. Please try again.\n");
