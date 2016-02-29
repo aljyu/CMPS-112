@@ -295,7 +295,7 @@ public class Main {
 				character.currentHealth = character.move();
 				if (character.currentHealth <= 0) {
 					gameStatus = false;
-					break LOOP_1;
+					break LOOP_2;
 				}
 				System.out.println("\nYou reach out and feel something slimy and smooth. Creeped out, you jump back and look at your hands to see a green electric slime coating your fingertips. You touch the wall in front of you, only to realize that it isn't actually a wall. It feels... slimy... and smooth... Your eyes widden in horror as you begin to frantically rub your hands across the \"wall\", only to have it reveal more of the green electric slime. Your horror increases as it finally hits you. You are trapped inside of a giant, green slime bubble.\nYou frantically grope around your surroundings in hopes that you can find something that will help you out of this mess. Your hands brush against something that feels like a switch. You brace yourself for the worst and flip it.\nImmediately, the slime bubble around you begins to glow brighter and brighter.\nYou look around at your surroundings and see that there are three items stuck to the sides of the bubble: a SCREWDRIVER, a pair of SCISSORS, and a CROWBAR.\nWhat do you want to grab?\n");
 				
@@ -333,7 +333,7 @@ public class Main {
 						character.currentHealth = character.move();
 						if (character.currentHealth <= 0) {
 							gameStatus = false;
-							break LOOP_1;
+							break LOOP_2;
 						}
 						System.out.println("After struggling with the scissors, you finally manage to get out of your entrapement! However, your victory is short lived as you notice that you are inside a maze of a shapeship, filled with winding corridors and thousands of rooms.\n");
 						next = false;
@@ -342,7 +342,7 @@ public class Main {
 						character.currentHealth = character.move();
 						if (character.currentHealth <= 0) {
 							gameStatus = false;
-							break LOOP_1;
+							break LOOP_2;
 						}
 						System.out.println("You start attacking the bubble with the crowbar. However, you soon realize that your attacks aren't doing anything to the bubble. Why is it even here?! ~.~ Oh well... Guess it's time to try something else.\n");
 					}
@@ -356,7 +356,7 @@ public class Main {
 				character.currentHealth = character.move();
 				if (character.currentHealth <= 0) {
 					gameStatus = false;
-					break LOOP_1;
+					break LOOP_2;
 				}
 				System.out.println("As you walk towards the strange noises, you begin to recognize them. It's the sound that is created when two metal or steel objects are being banged together. You soon find yourself in front of a door with light streaming out of it. You cautiously open the door and peek inside the room.\nYou see rows of gigantic cylindrical containers lined against the walls, with their lids opening and closing. You also notice that there are three items laying partially hideen behind one of the containers and beyond one of the containers, a metal door. You walk into the room and try to open the door, only to find out that it's locked. You go back to the items and find: a small BOX, a SCREWDRIVER, a pair of SCISSORS, and a CROWBAR.\nWhat do you want to grab?\n");
 				
@@ -386,7 +386,7 @@ public class Main {
 						character.currentHealth = character.move();
 						if (character.currentHealth <= 0) {
 							gameStatus = false;
-							break LOOP_1;
+							break LOOP_2;
 						}
 						if (checked == false) {
 							checked = true;
@@ -426,7 +426,7 @@ public class Main {
 						character.currentHealth = character.move();
 						if (character.currentHealth <= 0) {
 							gameStatus = false;
-							break LOOP_1;
+							break LOOP_2;
 						}
 						System.out.println("After struggling with the screwdriver, you finally manage to get out of your entrapment! However, your victory is short lived as you notice that you are inside a maze of a shapeship, filled with winding corridors and thousands of rooms.\n");
 						next = false;
@@ -435,7 +435,7 @@ public class Main {
 						character.currentHealth = character.move();
 						if (character.currentHealth <= 0) {
 							gameStatus = false;
-							break LOOP_1;
+							break LOOP_2;
 						}
 						System.out.println("You start attacking the door hinges with the scissors. However, you soon realize that your attack isn't doing anything to the door. Why is it even here?! ~.~ Oh well... Guess it's time to try something else.\n");
 					}
@@ -443,7 +443,7 @@ public class Main {
 						character.currentHealth = character.move();
 						if (character.currentHealth <= 0) {
 							gameStatus = false;
-							break LOOP_1;
+							break LOOP_2;
 						}
 						System.out.println("You start attacking the door with the crowbar. However, you soon realize that your attack isn't doing anything to the bubble. Why is it even here?! ~.~ Oh well... Guess it's time to try something else.\n");
 					}
@@ -457,7 +457,7 @@ public class Main {
 				character.currentHealth = character.move();
 				if (character.currentHealth <= 0) {
 					gameStatus = false;
-					break LOOP_1;
+					break LOOP_2;
 				}
 				System.out.println("Ouch! You bump your head on what feels like a metal bar on the ceiling. You didn't realize that the space you were in was so small. You grope around your surroundings in hopes that you can find something that will help you out of this mess. Your hands brush against something that feels like a switch. You brace yourself for the worst and flip it.\nImmediately, the room gets flooded with light.\nYoulook around at your surroundings and realize that you can only take one step in each direction. You start hyperventilating due to your claustrophobia until you notice that there is a tool kit in one of the corners.\nYou open the tool kit, hoping to find something that will help you escape, and find: a SCREWDRIVER, a pair of SCISSORS, and a CROWBAR.\nWhat do you want to grab?\n");
 				
@@ -487,7 +487,7 @@ public class Main {
 						character.currentHealth = character.move();
 						if (character.currentHealth <= 0) {
 							gameStatus = false;
-							break LOOP_1;
+							break LOOP_2;
 						}
 						System.out.println("You start attacking a wall with the screwdriver. However, you soon realize that your attack isn't doing anything to the door. Why is it even here?! ~.~ Oh well... Guess it's time to try something else.\n");
 					}
@@ -495,7 +495,7 @@ public class Main {
 						character.currentHealth = character.move();
 						if (character.currentHealth <= 0) {
 							gameStatus = false;
-							break LOOP_1;
+							break LOOP_2;
 						}
 						System.out.println("You start attacking a wall with the scissors. However, you soon realize that your attack isn't doing anything to the door. Why is it even here?! ~.~ Oh well... Guess it's time to try something else.\n");
 					}
@@ -503,7 +503,7 @@ public class Main {
 						character.currentHealth = character.move();
 						if (character.currentHealth <= 0) {
 							gameStatus = false;
-							break LOOP_1;
+							break LOOP_2;
 						}
 						System.out.println("You start attacking a wall with the crowbar with all of your strength. After some struggle, you finally manage to get out of your entrapment! However, your victory is short lived as you notice that you are inside a maze of a shapeship, filled with winding corridors and thousands of rooms.\n");
 						next = false;
