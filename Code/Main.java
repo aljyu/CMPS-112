@@ -164,7 +164,7 @@ public class Main {
 					input = in.nextLine();
 				}
 				
-				else if (input.equalsIgnoreCase("sink")) {
+				if (input.equalsIgnoreCase("sink")) {
 					character.currentHealth = character.move();
 					// Always call the following 3 lines after every move
 					if (character.currentHealth <= 0) {
