@@ -22,7 +22,6 @@ public class Main {
 		boolean checked = false;
 		boolean next;
 
-/*
 		if (gameStatus) {
 			System.out.println ("--------------------------------------------------------------------------------------------------------------------------------------------");
 			System.out.println ("                                                                Level 1");
@@ -39,8 +38,21 @@ public class Main {
 			System.out.println("\"Alright\" you think to yourself \"Where should I check out first? Should I CHECK OUT THE KITCHEN, CHECK OUT THE DOG HOUSE, or CHECK OUT THE BACKYARD?\"");
 		}
 		input = in.nextLine();
-
 		
+
+
+		if (gameStatus) {
+			System.out.println ("\n--------------------------------------------------------------------------------------------------------------------------------------------");
+			System.out.println ("                                                                Level 2");
+			System.out.println ("--------------------------------------------------------------------------------------------------------------------------------------------");
+			checked = false;
+			
+			//System.out.println("Location: Inside the spaceship prison cell");
+			System.out.println("You wake up to a strong throbbing in your head and no memory of where you are or how you got here. You try to look around at your suroundings for any hints as to where you might be, but all you see are glowing orbs of light floating around in the darkness. You get up, and suddenly it hits you. You were abducted by a tractor beam! You realize that you must have been kidnapped by aliens and try your hardest not to freak out. You look around and as your eyes begin to adjust to the darkness, your surroundings begin to come into focus.\nAs you force yourself to calm down and carefully observe your surroundings, you notice that there is a glowing light coming from your right side and strange noises coming from your left.\nAfter your mental struggle with yourself of whether you want to walk towards the GLOWING LIGHT, check out the STRANGE NOISES, or TAKE A STEP AWAY from where you are currently standing so that you can begin to grope around in the darkness, you have come to a decision.\nYou want to...");
+		}
+		input = in.nextLine();
+		
+/*
 		LOOP_1: // Loop 1
 		while (gameStatus) {
 			// Always call the following 11 lines after every input
@@ -62,219 +74,9 @@ public class Main {
 				System.out.println();
 				input = in.nextLine();
 			}
-			if (input.equalsIgnoreCase("check out the dog house")) {
-				character.currentHealth = character.move();
-				// Always call the following 3 lines after every move
-				if (character.currentHealth <= 0) {
-					gameStatus = false;
-					break LOOP_1;
-				}
-				System.out.println("\n\"Blue?\" you call out as you walk out the front door towards the dog house.");
-				System.out.println("You hear your dog, Blue, trotting towards you with something in his mouth.");
-				System.out.println("\"Should I TAKE THE ITEM, CHECK OUT THE KITCHEN, or CHECK OUT THE BACKYARD?\" you wonder to yourself as you absent-mindedly pet Blue on the head.");
-				input = in.nextLine();
-				// Always call the following 11 lines after every input
-				while (statusCheck(input)) {
-					status (input, character);
-					if (character.numPotions > 0) {
-						System.out.println("Would you like to drink a potion? YES or NO?");
-						input = in.nextLine();
-						if (input.equalsIgnoreCase("yes")) {
-							character.currentHealth = character.drink();
-							character.numPotions--;
-						}
-						else if (input.equalsIgnoreCase("no")) {
-						}
-						else {
-							System.out.println("Command not recognized. Please try again.\n");
-						}
-					}
-					System.out.println();
-					input = in.nextLine();
-				}
-				if (input.equalsIgnoreCase("take the item")) {
-					if (checked == false) {
-						checked = true;
-						character.currentHealth = character.move();
-						// Always call the following 3 lines after every move
-						if (character.currentHealth <= 0) {
-							gameStatus = false;
-							break LOOP_1;
-						}
-						System.out.println("You remove the item from Blue's mouth.\nYOU HAVE OBTAINED A POTION!\n");
-						character.numPotions++;
-					}
-					else {
-						System.out.println("You remove the item from Blue's mouth only to find out that it is an old tennis ball.\n");
-					}
-					System.out.println("Do you want to CHECK OUT THE KITCHEN or CHECK OUT THE BACKYARD?");
-					input = in.nextLine();
-					// Always call the following 11 lines after every input
-					while (statusCheck(input)) {
-						status (input, character);
-						if (character.numPotions > 0) {
-							System.out.println("Would you like to drink a potion? YES or NO?");
-							input = in.nextLine();
-							if (input.equalsIgnoreCase("yes")) {
-								character.currentHealth = character.drink();
-								character.numPotions--;
-							}
-							else if (input.equalsIgnoreCase("no")) {
-							}
-							else {
-								System.out.println("Command not recognized. Please try again.\n");
-							}
-						}
-						System.out.println();
-						input = in.nextLine();
-					}
-					continue LOOP_1;
-				}
-				else {
-					System.out.println("Command not recognized. Please try again.\n");
-				}
-				continue LOOP_1;
-			}
-			else if (input.equalsIgnoreCase("check out the kitchen")) {
-				character.currentHealth = character.move();
-				// Always call the following 3 lines after every move
-				if (character.currentHealth <= 0) {
-					gameStatus = false;
-					break LOOP_1;
-				}
-				System.out.println("\nYou walk into the kitchen.\n\"Alright\" you think to yourself \"Do I want to LOOK INSIDE THE SINK, CHECK OUT THE DOG HOUSE, or CHECK OUT THE BACKYARD");
-				input = in.nextLine();
-				// Always call the following 4 lines after every input
-				// Always call the following 11 lines after every input
-				while (statusCheck(input)) {
-					status (input, character);
-					if (character.numPotions > 0) {
-						System.out.println("Would you like to drink a potion? YES or NO?");
-						input = in.nextLine();
-						if (input.equalsIgnoreCase("yes")) {
-							character.currentHealth = character.drink();
-							character.numPotions--;
-						}
-						else if (input.equalsIgnoreCase("no")) {
-						}
-						else {
-							System.out.println("Command not recognized. Please try again.\n");
-						}
-					}
-					System.out.println();
-					input = in.nextLine();
-				}
-				if (input.equalsIgnoreCase("look inside the sink")) {
-					character.currentHealth = character.move();
-					// Always call the following 3 lines after every move
-					if (character.currentHealth <= 0) {
-						gameStatus = false;
-						break LOOP_1;
-					}
-					System.out.println("\nYou look over to your sink and find a bunch of dirty dishes. \"I should've cleaned those hours ago...\" you think to yourself");
-					System.out.println("\"Do I want to CHECK OUT THE DOG HOUSE, or CHECK OUT THE BACKYARD\"?\n");
-					input = in.nextLine();
-					// Always call the following 11 lines after every input
-					while (statusCheck(input)) {
-						status (input, character);
-						if (character.numPotions > 0) {
-							System.out.println("Would you like to drink a potion? YES or NO?");
-							input = in.nextLine();
-							if (input.equalsIgnoreCase("yes")) {
-								character.currentHealth = character.drink();
-								character.numPotions--;
-							}
-							else if (input.equalsIgnoreCase("no")) {
-							}
-							else {
-								System.out.println("Command not recognized. Please try again.\n");
-							}
-						}
-						System.out.println();
-						input = in.nextLine();
-					}
-					continue LOOP_1;
-				}
-				continue LOOP_1;
-			}
-			else if (input.equalsIgnoreCase("check out the backyard")) {
-				character.currentHealth = character.move();
-				// Always call the following 3 lines after every move
-				if (character.currentHealth <= 0) {
-					gameStatus = false;
-					break LOOP_1;
-				}
-				System.out.println("\nYou walk outside to the backyard where you are immediately caught in a tractor beam.");
-				System.out.println("Your thoughts immediately go into overdrive mode, debating whether it would be better to STRUGGLE against the beam or JUST COMPLY.");
-				input = in.nextLine();
-				// Always call the following 11 lines after every input
-				while (statusCheck(input)) {
-					status (input, character);
-					if (character.numPotions > 0) {
-						System.out.println("Would you like to drink a potion? YES or NO?");
-						input = in.nextLine();
-						if (input.equalsIgnoreCase("yes")) {
-							character.currentHealth = character.drink();
-							character.numPotions--;
-						}
-						else if (input.equalsIgnoreCase("no")) {
-						}
-						else {
-							System.out.println("Command not recognized. Please try again.\n");
-						}
-					}
-					System.out.println();
-					input = in.nextLine();
-				}
-				if (input.equalsIgnoreCase("struggle")) {
-					character.currentHealth = character.move();
-					System.out.println("Your struggles are useless as you feel yourself being beamed up and everything fades to black.");
-				}
-				else {
-					character.currentHealth = character.move();
-					System.out.println("\nYou relax your body and as you feel yourself being beamed up, everything fades to black.");
-				}
-				break LOOP_1;
-			}
-			else {
-				while (!input.equalsIgnoreCase("CHECK OUT THE KITCHEN") || !input.equalsIgnoreCase("CHECK OUT THE DOG HOUSE") || !input.equalsIgnoreCase("CHECK OUT THE BACKYARD") || !input.equals("status")) {
-					System.out.println("Command not recognized. Please try again.\n");
-					input = in.nextLine();
-					while (statusCheck(input)) {
-						status (input, character);
-						if (character.numPotions > 0) {
-							System.out.println("Would you like to drink a potion? YES or NO?");
-							input = in.nextLine();
-							if (input.equalsIgnoreCase("yes")) {
-								character.currentHealth = character.drink();
-								character.numPotions--;
-							}
-							else if (input.equalsIgnoreCase("no")) {
-							}
-							else {
-								System.out.println("Command not recognized. Please try again.\n");
-							}
-						}
-						System.out.println();
-						input = in.nextLine();
-					}
-					break;
-				}
-				continue LOOP_1;
-			}
+			
 		}
 */		
-
-		if (gameStatus) {
-			System.out.println ("\n--------------------------------------------------------------------------------------------------------------------------------------------");
-			System.out.println ("                                                                Level 2");
-			System.out.println ("--------------------------------------------------------------------------------------------------------------------------------------------");
-			checked = false;
-			
-			//System.out.println("Location: Inside the spaceship prison cell");
-			System.out.println("You wake up to a strong throbbing in your head and no memory of where you are or how you got here. You try to look around at your suroundings for any hints as to where you might be, but all you see are glowing orbs of light floating around in the darkness. You get up, and suddenly it hits you. You were abducted by a tractor beam! You realize that you must have been kidnapped by aliens and try your hardest not to freak out. You look around and as your eyes begin to adjust to the darkness, your surroundings begin to come into focus.\nAs you force yourself to calm down and carefully observe your surroundings, you notice that there is a glowing light coming from your right side and strange noises coming from your left.\nAfter your mental struggle with yourself of whether you want to walk towards the GLOWING LIGHT, check out the STRANGE NOISES, or TAKE A STEP AWAY from where you are currently standing so that you can begin to grope around in the darkness, you have come to a decision.\nYou want to...");
-		}
-		input = in.nextLine();
 		
 		LOOP_2: // Loop 2
 		while (gameStatus) {
@@ -566,7 +368,8 @@ public class Main {
 			System.out.println("Do you want to SCREAM and hope that the loud noise wakes you up from what are hoping is a dream, SURPRISE ATTACK the guard in hopes that your attack will render them unconscious, or SNEAK INSIDE the room?");
 		}
 		input = in.nextLine();
-		
+
+/*		
 		LOOP_3: // Loop 3
 		while (gameStatus) {
 			// Always call the following 11 lines after every input
@@ -781,6 +584,7 @@ public class Main {
 				input = in.nextLine();
 			}
 		}
+*/		
 		
 		// Game Over
 		if (!gameStatus) {
