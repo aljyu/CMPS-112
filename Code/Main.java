@@ -258,7 +258,7 @@ public class Main {
 						System.out.println();
 						input = in.nextLine();
 					}
-					System.out.println("Test");
+					break;
 				}
 				continue LOOP_1;
 			}
