@@ -645,6 +645,7 @@ public class Main {
 				input = in.nextLine();
 			}
 		}
+*/
 		
 		// Game Over
 		if (!gameStatus) {
