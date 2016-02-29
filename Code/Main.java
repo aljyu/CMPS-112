@@ -139,7 +139,11 @@ public class Main {
 				}
 				System.out.println("\nYou walk into the kitchen.\n\"Alright\" you think to yourself \"Do I want to look inside the SINK, check out the DOG HOUSE, or check out the BACKYARD");
 				input = in.nextLine();
-				
+								
+				while (!input.equalsIgnoreCase("sink") || !input.equalsIgnoreCase("dog house") || !input.equalsIgnoreCase("backyard") || !input.equalsIgnoreCase("status")) {
+					System.out.println("#9?)Command not recognized. Please Try again.\n");
+					input = in.nextLine();
+				}
 				// Always call the following 11 lines after every input
 				while (statusCheck(input)) {
 					status (input, character);
@@ -160,7 +164,7 @@ public class Main {
 					input = in.nextLine();
 				}
 				
-				if (input.equalsIgnoreCase("sink")) {
+				else if (input.equalsIgnoreCase("sink")) {
 					character.currentHealth = character.move();
 					// Always call the following 3 lines after every move
 					if (character.currentHealth <= 0) {
