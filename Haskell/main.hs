@@ -1,5 +1,5 @@
 module Main where
---import Player
+import Player
 
 
 class Status a where
@@ -40,7 +40,7 @@ main = do
 	putStrLn("As you begin to walk out of your room, the light behind you begins to slowly fade away.\n")
 	putStrLn("\"Alright\" you think to yourself \"Where should I check out first? Should I CHECK OUT THE KITCHEN, CHECK OUT THE DOG HOUSE, or CHECK OUT THE BACKYARD?\"")
 
-
+	--LOOP1
 	--x <- getLine
 	--stat x
 	--check if input calls status
@@ -70,3 +70,12 @@ main = do
 
 	putStrLn("\nYou look over to your sink and find a bunch of dirty dishes. \"I should've cleaned those hours ago...\" you think to yourself");
 	putStrLn("\"Do I want to CHECK OUT THE DOG HOUSE, or CHECK OUT THE BACKYARD\"?\n");
+
+	--check if input calls status
+	--if (input == "LOOK INSIDE THE SINK " ) then currentHP - 5
+		-- if current HP <= 0 then gamestat false	
+
+	--break LOOP1
+	--else 
+		--if (input == "LOOK INSIDE THE SINK " ) then currentHP - 5
+		-- if current HP <= 0 then gamestat false
