@@ -144,6 +144,7 @@ public class Main {
 					System.out.println("#9?)Command not recognized. Please try again.\n");
 					input = in.nextLine();
 					System.out.println("1" + input);
+					break;
 				}
 			
 				// Always call the following 11 lines after every input
@@ -164,6 +165,13 @@ public class Main {
 					}
 					System.out.println();
 					input = in.nextLine();
+				}
+				
+				while (!input.equalsIgnoreCase("sink") || !input.equalsIgnoreCase("dog house") || !input.equalsIgnoreCase("backyard") || !input.equalsIgnoreCase("status")) {
+					System.out.println("#9?)Command not recognized. Please try again.\n");
+					input = in.nextLine();
+					System.out.println("1" + input);
+					break;
 				}
 				
 				if (input.equalsIgnoreCase("sink")) {
