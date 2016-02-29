@@ -141,8 +141,9 @@ public class Main {
 				input = in.nextLine();
 				
 				while (!input.equalsIgnoreCase("sink") || !input.equalsIgnoreCase("dog house") || !input.equalsIgnoreCase("backyard") || !input.equalsIgnoreCase("status")) {
-					System.out.println("#9?)Command not recognized. Please Try again.\n");
+					System.out.println("#9?)Command not recognized. Please try again.\n");
 					input = in.nextLine();
+					System.out.println("1" + input);
 				}
 			
 				// Always call the following 11 lines after every input
@@ -259,7 +260,7 @@ public class Main {
 						System.out.println();
 						input = in.nextLine();
 					}
-					break;
+					System.out.println("2" + input);
 				}
 				continue LOOP_1;
 			}
