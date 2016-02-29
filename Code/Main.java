@@ -417,14 +417,13 @@ public class Main {
 								character.numPotions--;
 							}
 							else if (input.equalsIgnoreCase("no")) {
-								//Errs here for some weird reason
-								System.out.print("Test" + input);
 							}
 							else {
 								System.out.println("Command not recognized. Please try again.\n");
 							}
 						}
 						System.out.println();
+						input = in.nextLine();
 					}
 					if (input.equalsIgnoreCase("screwdriver")) {
 						character.currentHealth = character.move();
