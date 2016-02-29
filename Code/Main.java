@@ -201,7 +201,7 @@ public class Main {
 					break LOOP_1;
 				}
 				System.out.println("\nYou walk outside to the backyard where you are immediately caught in a tractor beam.");
-				System.out.println("Your thoughts immediately go into overdrive mode, debating whether it would be better to STRUGGLE AGAINST THE BEAM or JUST COMPLY.");
+				System.out.println("Your thoughts immediately go into overdrive mode, debating whether it would be better to STRUGGLE against the beam or JUST COMPLY.");
 				input = in.nextLine();
 				// Always call the following 11 lines after every input
 				while (statusCheck(input)) {
@@ -222,10 +222,12 @@ public class Main {
 					System.out.println();
 					input = in.nextLine();
 				}
-				if (input.equalsIgnoreCase("struggle against the beam")) {
+				if (input.equalsIgnoreCase("struggle")) {
+					character.currentHealth = character.move();
 					System.out.println("Your struggles are useless as you feel yourself being beamed up and everything fades to black.");
 				}
 				else {
+					character.currentHealth = character.move();
 					System.out.println("\nYou relax your body and as you feel yourself being beamed up, everything fades to black.");
 				}
 				break LOOP_1;
@@ -415,6 +417,8 @@ public class Main {
 								character.numPotions--;
 							}
 							else if (input.equalsIgnoreCase("no")) {
+								//Errs here for some weird reason
+								System.out.print("Test" ++ input);
 							}
 							else {
 								System.out.println("Command not recognized. Please try again.\n");
