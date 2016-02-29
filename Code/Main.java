@@ -139,32 +139,12 @@ public class Main {
 				}
 				System.out.println("\nYou walk into the kitchen.\n\"Alright\" you think to yourself \"Do I want to look inside the SINK, check out the DOG HOUSE, or check out the BACKYARD");
 				input = in.nextLine();
-								
-				// Always call the following 11 lines after every input
-				while (statusCheck(input)) {
-					status (input, character);
-					if (character.numPotions > 0) {
-						System.out.println("Would you like to drink a potion? YES or NO?");
-						input = in.nextLine();
-						if (input.equalsIgnoreCase("yes")) {
-							character.currentHealth = character.drink();
-							character.numPotions--;
-						}
-						else if (input.equalsIgnoreCase("no")) {
-						}
-						else {
-							System.out.println("#4)Command not recognized. Please try again.\n");
-						}
-					}
-					System.out.println();
-					input = in.nextLine();
-				}
 				
 				while (!input.equalsIgnoreCase("sink") || !input.equalsIgnoreCase("dog house") || !input.equalsIgnoreCase("backyard") || !input.equalsIgnoreCase("status")) {
 					System.out.println("#9?)Command not recognized. Please Try again.\n");
 					input = in.nextLine();
-					break;
 				}
+			
 				// Always call the following 11 lines after every input
 				while (statusCheck(input)) {
 					status (input, character);
