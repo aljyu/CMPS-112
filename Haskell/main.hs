@@ -16,6 +16,7 @@ main = do
 	putStrLn("\nHello " ++ n ++ "!")
 	 
 	--player function (set name, ...)
+	let player = Player 100 10
 	putStrLn("You currently have [current HP] and [current potions].")
 	putStrLn("If you wish to view these stats during any point of the game, type in \"Status\".");
 
@@ -45,37 +46,40 @@ main = do
 	--stat x
 	--check if input calls status
 
-	--input <- geLine
-	--if (input == "DOG HOUSE" ) then currentHP - 5
+	input <- geLine
+	let inp = read input :: String
+	if (inp == "DOG HOUSE" ) 
+		then do
+		--move1 = move player 
 		-- if current HP <= 0 then gamestat false
-	putStrLn("\n\"Blue?\" you call out as you walk out the front door towards the dog house.");
-	putStrLn("You hear your dog, Blue, trotting towards you with something in his mouth.");
-	putStrLn("\"Should I TAKE THE ITEM, CHECK OUT THE KITCHEN, or CHECK OUT THE BACKYARD?\" you wonder to yourself as you absent-mindedly pet Blue on the head.");
-	--getLine
+		putStrLn("\n\"Blue?\" you call out as you walk out the front door towards the dog house.");
+		putStrLn("You hear your dog, Blue, trotting towards you with something in his mouth.");
+		putStrLn("\"Should I TAKE THE ITEM, CHECK OUT THE KITCHEN, or CHECK OUT THE BACKYARD?\" you wonder to yourself as you absent-mindedly pet Blue on the head.");
+		--getLine
 
-	--check if input calls status
-	--if (input == "TAKE THE ITEM" ) then currentHP - 5
-		-- if current HP <= 0 then gamestat false		
-	putStrLn("You remove the item from Blue's mouth only to find out that it is an old tennis ball.\n")
-	putStrLn("Do you want to CHECK OUT THE KITCHEN or CHECK OUT THE BACKYARD?");
+	----check if input calls status
+	----if (input == "TAKE THE ITEM" ) then currentHP - 5
+	--	-- if current HP <= 0 then gamestat false		
+	--putStrLn("You remove the item from Blue's mouth only to find out that it is an old tennis ball.\n")
+	--putStrLn("Do you want to CHECK OUT THE KITCHEN or CHECK OUT THE BACKYARD?");
 
-	--check if input calls status
-	--if (input == "CHECK OUT THE KITCHEN " ) then currentHP - 5
-		-- if current HP <= 0 then gamestat false		
-	putStrLn("\nYou walk into the kitchen.\n\"Alright\" you think to yourself \"Do I want to LOOK INSIDE THE SINK, CHECK OUT THE DOG HOUSE, or CHECK OUT THE BACKYARD");
+	----check if input calls status
+	----if (input == "CHECK OUT THE KITCHEN " ) then currentHP - 5
+	--	-- if current HP <= 0 then gamestat false		
+	--putStrLn("\nYou walk into the kitchen.\n\"Alright\" you think to yourself \"Do I want to LOOK INSIDE THE SINK, CHECK OUT THE DOG HOUSE, or CHECK OUT THE BACKYARD");
 
-	--check if input calls status
-	--if (input == "LOOK INSIDE THE SINK " ) then currentHP - 5
-		-- if current HP <= 0 then gamestat false			
+	----check if input calls status
+	----if (input == "LOOK INSIDE THE SINK " ) then currentHP - 5
+	--	-- if current HP <= 0 then gamestat false			
 
-	putStrLn("\nYou look over to your sink and find a bunch of dirty dishes. \"I should've cleaned those hours ago...\" you think to yourself");
-	putStrLn("\"Do I want to CHECK OUT THE DOG HOUSE, or CHECK OUT THE BACKYARD\"?\n");
+	--putStrLn("\nYou look over to your sink and find a bunch of dirty dishes. \"I should've cleaned those hours ago...\" you think to yourself");
+	--putStrLn("\"Do I want to CHECK OUT THE DOG HOUSE, or CHECK OUT THE BACKYARD\"?\n");
 
-	--check if input calls status
-	--if (input == "LOOK INSIDE THE SINK " ) then currentHP - 5
-		-- if current HP <= 0 then gamestat false	
+	----check if input calls status
+	----if (input == "LOOK INSIDE THE SINK " ) then currentHP - 5
+	--	-- if current HP <= 0 then gamestat false	
 
-	--break LOOP1
-	--else 
-		--if (input == "LOOK INSIDE THE SINK " ) then currentHP - 5
-		-- if current HP <= 0 then gamestat false
+	----break LOOP1
+	----else 
+	--	--if (input == "LOOK INSIDE THE SINK " ) then currentHP - 5
+	--	-- if current HP <= 0 then gamestat false

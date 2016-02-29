@@ -1,26 +1,21 @@
---Haskell
-module Player where
-import Control.Monad.State
+module Player
+(
+  Player(..)
+  ,move
+  ,hit
+  ,drink
+) where
 
-class Character a where
-	health :: a -> Int
-	damage :: a -> Int -> a
+data Player = Player{hp :: Int, potions :: Int} deriving (Show,Eq)
 
-data Player = Player { playerHP :: Int } deriving Show
+move::Player->Player
+move hero  = Player ((hp hero) - 5) (potions hero)
 
-instance Character Player where
-	health = playerHP
-	damage (Player hp) dmg = Player (hp - dmg)
+hit::Player->Player
+hit hero  = Player ((hp hero) - 20) (potions hero)
 
---move :: Character a => a -> Int -> a
---move p = damage p (health )
+drink::Player->Player
+drink hero  = Player ((hp hero) + 20) (potions hero)
 
---characterName :: String -> State Player ()
---characterName n = do
---    nVal <- get
---    put (nVal { name = n })
 
---playerMaxHP :: State Player Int
---playerMaxHP = get >>= return . health
 
---getHealth :: Player 
