@@ -143,6 +143,7 @@ public class Main {
 				while (!input.equalsIgnoreCase("sink") || !input.equalsIgnoreCase("dog house") || !input.equalsIgnoreCase("backyard") || !input.equalsIgnoreCase("status")) {
 					System.out.println("#9?)Command not recognized. Please Try again.\n");
 					input = in.nextLine();
+					break;
 				}
 				// Always call the following 11 lines after every input
 				while (statusCheck(input)) {
