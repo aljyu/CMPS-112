@@ -418,7 +418,7 @@ public class Main {
 							}
 							else if (input.equalsIgnoreCase("no")) {
 								//Errs here for some weird reason
-								System.out.print("Test" ++ input);
+								System.out.print("Test" + input);
 							}
 							else {
 								System.out.println("Command not recognized. Please try again.\n");
