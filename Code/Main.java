@@ -259,6 +259,7 @@ public class Main {
 					System.out.println();
 					input = in.nextLine();
 				}
+				continue LOOP_1;
 			}
 		}
 		
