@@ -261,6 +261,7 @@ public class Main {
 						input = in.nextLine();
 					}
 					System.out.println("2" + input);
+					break;
 				}
 				continue LOOP_1;
 			}
