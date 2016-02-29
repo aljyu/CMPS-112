@@ -123,6 +123,8 @@ public class Main {
 				}
 				System.out.println("Ha");
 			}
+			System.out.println("La.");
+			break;
 			//Start here
 		}
 		
