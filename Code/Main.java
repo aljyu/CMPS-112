@@ -140,11 +140,10 @@ public class Main {
 				System.out.println("\nYou walk into the kitchen.\n\"Alright\" you think to yourself \"Do I want to look inside the SINK, check out the DOG HOUSE, or check out the BACKYARD");
 				input = in.nextLine();
 				
-				while (!input.equalsIgnoreCase("sink") || !input.equalsIgnoreCase("dog house") || !input.equalsIgnoreCase("backyard") || !input.equalsIgnoreCase("status")) {
+				if (!input.equalsIgnoreCase("sink") || !input.equalsIgnoreCase("dog house") || !input.equalsIgnoreCase("backyard") || !input.equalsIgnoreCase("status")) {
 					System.out.println("#9?)Command not recognized. Please try again.\n");
 					input = in.nextLine();
-					System.out.println("1" + input);
-					break;
+					continue LOOP_1;
 				}
 			
 				// Always call the following 11 lines after every input
@@ -165,13 +164,6 @@ public class Main {
 					}
 					System.out.println();
 					input = in.nextLine();
-				}
-				
-				while (!input.equalsIgnoreCase("sink") || !input.equalsIgnoreCase("dog house") || !input.equalsIgnoreCase("backyard") || !input.equalsIgnoreCase("status")) {
-					System.out.println("#9?)Command not recognized. Please try again.\n");
-					input = in.nextLine();
-					System.out.println("1" + input);
-					break;
 				}
 				
 				if (input.equalsIgnoreCase("sink")) {
@@ -247,31 +239,26 @@ public class Main {
 				break LOOP_1;
 			}
 			else {
-				while (!input.equalsIgnoreCase("KITCHEN") || !input.equalsIgnoreCase("DOG HOUSE") || !input.equalsIgnoreCase("BACKYARD") || !input.equals("status")) {
-					System.out.println("#7)Command not recognized. Please try again.\n");
-					input = in.nextLine();
-					while (statusCheck(input)) {
-						status (input, character);
-						if (character.numPotions > 0) {
-							System.out.println("Would you like to drink a potion? YES or NO?");
-							input = in.nextLine();
-							if (input.equalsIgnoreCase("yes")) {
-								character.currentHealth = character.drink();
-								character.numPotions--;
-							}
-							else if (input.equalsIgnoreCase("no")) {
-							}
-							else {
-								System.out.println("#8)Command not recognized. Please try again.\n");
-							}
-						}
-						System.out.println();
+				System.out.println("#7)Command not recognized. Please try again.\n");
+				input = in.nextLine();
+				while (statusCheck(input)) {
+					status (input, character);
+					if (character.numPotions > 0) {
+						System.out.println("Would you like to drink a potion? YES or NO?");
 						input = in.nextLine();
+						if (input.equalsIgnoreCase("yes")) {
+							character.currentHealth = character.drink();
+							character.numPotions--;
+						}
+						else if (input.equalsIgnoreCase("no")) {
+						}
+						else {
+							System.out.println("#8)Command not recognized. Please try again.\n");
+						}
 					}
-					System.out.println("2" + input);
-					break;
+					System.out.println();
+					input = in.nextLine();
 				}
-				continue LOOP_1;
 			}
 		}
 		
