@@ -325,7 +325,7 @@ public class Main {
 						character.currentHealth = character.move();
 						if (character.currentHealth <= 0) {
 							gameStatus = false;
-							break LOOP_1;
+							break LOOP_2;
 						}
 						System.out.println("You start poking the bubble with the screwdriver. However, you soon realize that your poking isn't doing anything to the bubble. Why is it even here?! ~.~ Oh well... Guess it's time to try something else.\n");
 					}
