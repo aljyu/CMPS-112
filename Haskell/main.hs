@@ -1,14 +1,6 @@
 module Main where
 import Player
 
-
---class Status a where
---	stat :: a -> String
-
---instance  Status Char where
---	stat _ =  "Would you like to drink a potion? YES or NO?"
-	
-
 main = do  
 	putStrLn("Welcome to [the game]!")
 	putStrLn("What is your name?")
@@ -45,7 +37,6 @@ main = do
 	--x <- getLine
 	--stat x
 	--check if input calls status
-	--LOOP1
 	input <- getLine
 	--let inp = read input :: String
 	if (input == "DOG HOUSE" ) 
@@ -84,6 +75,10 @@ main = do
 				--input <- getLine
 
 			else putStrLn ""
+		
+		--else
+		--	if (input == "DOG HOUSE")
+
 		else do 	
 			putStrLn "\nYou walk outside to the backyard where you are immediately caught in a tractor beam."
 			putStrLn "Your thoughts immediately go into overdrive mode, debating whether it would be better to STRUGGLE against the beam or just COMPLY."

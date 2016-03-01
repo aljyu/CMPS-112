@@ -1,13 +1,13 @@
 public class Player{
     // Player Variables
-//    private String name;
+    // private String name;
     public static int maxHealth;
     public static int currentHealth;
     public static int attackDamage;
     public static int numPotions;
 
     // Player's constructor
-    public Player (/*String name, */ int maxHP, int currentHP, int damage, int potion, int heal) {
+    public Player (int maxHP, int currentHP, int damage, int potion, int heal) {
 //        name = this.name;
         maxHealth = maxHP;
         currentHealth = currentHP;
