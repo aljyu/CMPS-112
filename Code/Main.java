@@ -583,7 +583,7 @@ public class Main {
 		LOOP_3: // Loop 3
 		while (gameStatus) {
 			// Always call the following 11 lines after every input
-			while (!(input.equalsIgnoreCase("scream") || input.equalsIgnoreCase("surprise attack") || input.equalsIgnoreCase("sneak attack")) || (input.equalsIgnoreCase("status"))) {
+			while (!(input.equalsIgnoreCase("scream") || input.equalsIgnoreCase("surprise attack") || input.equalsIgnoreCase("sneak inside")) || (input.equalsIgnoreCase("status"))) {
 				// Always call the following 11 lines after every input
 				if (statusCheck(input)) {
 					status (input, character);
