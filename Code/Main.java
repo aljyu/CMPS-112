@@ -158,7 +158,7 @@ public class Main {
 					gameStatus = false;
 					break LOOP_1;
 				}
-				System.out.println("\nYou walk into the kitchen.\n\"Alright\" you think to yourself \"Do I want to look inside the SINK, check out the DOG HOUSE, or check out the BACKYARD");
+				System.out.println("\nYou walk into the kitchen.\n\"Alright\" you think to yourself \"Do I want to look inside the SINK, check out the DOG HOUSE, or check out the BACKYARD?\"");
 				input = in.nextLine();
 				while (!(input.equalsIgnoreCase("sink") || input.equalsIgnoreCase("dog house") || input.equalsIgnoreCase("backyard")) || (input.equalsIgnoreCase("status"))) {
 					// Always call the following 11 lines after every input
