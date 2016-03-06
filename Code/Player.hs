@@ -5,7 +5,6 @@ module Player
   ,extra
   ,hit
   ,drink
---  ,numPots
 ) where
 
 data Player = Player{ hp :: Int, potions :: Int} deriving (Show,Eq)
@@ -23,6 +22,3 @@ drink :: Player -> Player
 drink hero
     | ((hp hero) + 20) > 100   = Player 105 ((potions hero) - 1)
     | otherwise                     = Player ((hp hero) + 25) ((potions hero) - 1)
-
---numPots :: Player -> Int
---numPots hero = potions hero
