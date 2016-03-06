@@ -17,7 +17,7 @@ player :: Player
 player = Player 100 0
 
 main = do
-                putStrLn("Welcome to EK4!")
+                putStrLn("Welcome to [Game]!")
                 putStrLn("What is your name?")
                 name <- getLine
                 putStrLn("\nHello " ++ name ++ "!\n") 
