@@ -4,7 +4,7 @@ public class Main {
     public static void main (String[] args)  {
         Scanner in = new Scanner (System.in);
         String input;
-        System.out.println ("Welcome to EK4!");
+        System.out.println ("Welcome to [Game]!");
         System.out.println ("What is your name?");
         String playerName = in.nextLine();
         System.out.println ("\nHello " + playerName + "!");
