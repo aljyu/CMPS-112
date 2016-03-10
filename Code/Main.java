@@ -424,31 +424,7 @@ public class Main {
 							System.out.println("You open the box and find nothing.\n");
 						}
 						System.out.println("You look back over at the remaining items. What do you want to grab?\n");
-						//input = in.nextLine();
-//NEED SOMETHING HERE
-                        //continue LOOP_2;
 					}
-/*
-					// Always call the following 11 lines after every input
-					while (statusCheck(input)) {
-						status (input, character);
-						if (character.numPotions > 0) {
-							System.out.println("Would you like to drink a potion? YES or NO?");
-							input = in.nextLine();
-							if (input.equalsIgnoreCase("yes")) {
-								character.currentHealth = character.drink();
-								character.numPotions--;
-							}
-							else if (input.equalsIgnoreCase("no")) {
-							}
-							else {
-								System.out.println("Command not recognized. Please try again.");
-							}
-						}
-						System.out.println();
-						input = in.nextLine();
-					}
-*/
 					else if (input.equalsIgnoreCase("screwdriver")) {
 						character.currentHealth = character.move();
 						if (character.currentHealth <= 0) {
@@ -583,8 +559,8 @@ public class Main {
 			//System.out.println("Location: Inside the spaceship prison cell");
 			System.out.println("You find yourself in a long hallway. There is a guard standing near a door who seems like he is dozing off. \"That room must be important if it has a guard in front of it...\" you think to yourself as you approach it.");
 			System.out.println("Do you want to SCREAM and hope that the loud noise wakes you up from what are hoping is a dream, SURPRISE ATTACK the guard in hopes that your attack will render them unconscious, or SNEAK INSIDE the room?");
+            input = in.nextLine();
 		}
-		input = in.nextLine();
 		
 		
 		LOOP_3: // Loop 3
