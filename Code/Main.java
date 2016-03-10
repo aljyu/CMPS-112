@@ -233,27 +233,28 @@ public class Main {
 				System.out.println("Your thoughts immediately go into overdrive mode, debating whether it would be better to STRUGGLE against the beam or just COMPLY.");
 				input = in.nextLine();
 				while (!(input.equalsIgnoreCase("struggle") || input.equalsIgnoreCase("comply")) || input.equalsIgnoreCase("status")) {
-					// Always call the following 11 lines after every input
-					if (statusCheck(input)) {
-						status (input, character);
-						if (character.numPotions > 0) {
-							System.out.println("Would you like to drink a potion? YES or NO?");
-							input = in.nextLine();
-							if (input.equalsIgnoreCase("yes")) {
-								character.currentHealth = character.drink();
-								character.numPotions--;
-							}
-							else if (input.equalsIgnoreCase("no")) {
-							}
-							else {
-								System.out.println("Command not recognized. Please try again.");
-							}
-						}
-						System.out.println();
-						input = in.nextLine();
-					}
-					System.out.println("Command not recognized. Please try again.\n");
-					input = in.nextLine();
+                    // Always call the following 11 lines after every input
+                    if (statusCheck(input)) {
+                        status (input, character);
+                        if (character.numPotions > 0) {
+                            System.out.println("Would you like to drink a potion? YES or NO?");
+                            input = in.nextLine();
+                            if (input.equalsIgnoreCase("yes")) {
+                                character.currentHealth = character.drink();
+                                character.numPotions--;
+                            }
+                            else if (input.equalsIgnoreCase("no")) {
+                            }
+                            else {
+                                System.out.println("Command not recognized. Please try again.");
+                            }
+                        }
+                        System.out.println();
+                    }
+                    else {
+                        System.out.println("Command not recognized. Please try again.\n");
+                    }
+                    input = in.nextLine();
 				}
 				if (input.equalsIgnoreCase("struggle")) {
                     character.currentHealth = character.move();
@@ -423,8 +424,11 @@ public class Main {
 							System.out.println("You open the box and find nothing.\n");
 						}
 						System.out.println("You look back over at the remaining items. What do you want to grab?\n");
-						input = in.nextLine();
+						//input = in.nextLine();
+//NEED SOMETHING HERE
+                        //continue LOOP_2;
 					}
+/*
 					// Always call the following 11 lines after every input
 					while (statusCheck(input)) {
 						status (input, character);
@@ -444,7 +448,8 @@ public class Main {
 						System.out.println();
 						input = in.nextLine();
 					}
-					if (input.equalsIgnoreCase("screwdriver")) {
+*/
+					else if (input.equalsIgnoreCase("screwdriver")) {
 						character.currentHealth = character.move();
 						if (character.currentHealth <= 0) {
 							gameStatus = false;
