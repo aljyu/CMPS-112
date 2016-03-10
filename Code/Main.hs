@@ -17,11 +17,12 @@ player :: Player
 player = Player 100 0
 
 main = do
-                putStrLn("Welcome to [Game]!")
+                putStrLn("Welcome to Abduction!")
                 putStrLn("What is your name?")
                 name <- getLine
                 putStrLn("\nHello " ++ name ++ "!\n") 
-                putStrLn("If you wish to view these stats during any point of the game, type in \"STATUS\".")
+                status player
+                putStrLn("If you wish to view your stats during any point of the game, type in \"STATUS\".")
                 putStrLn("You must type all commands and actions in capital letters.")
                 putStrLn("If you wish to drink a potion, first type in Status and follow the instructions given.")
                 putStrLn("In this game, every time you perform an action you will lose HP. When your HP hits 0, you will die and the game will end.")

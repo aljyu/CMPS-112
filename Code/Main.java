@@ -4,14 +4,14 @@ public class Main {
     public static void main (String[] args)  {
         Scanner in = new Scanner (System.in);
         String input;
-        System.out.println ("Welcome to [Game]!");
+        System.out.println ("Welcome to Abduction!");
         System.out.println ("What is your name?");
         String playerName = in.nextLine();
         System.out.println ("\nHello " + playerName + "!");
         
         Player character = new Player (100, 100, 5, 0, 30);
         System.out.println("You currently have " + character.playerCurrentHP() + " HP and " + character.playerCurrentPotions() + " potions.");
-        System.out.println("If you wish to view these stats during any point of the game, type in \"Status\".");
+        System.out.println("If you wish to view your stats during any point of the game, type in \"Status\".");
 		System.out.println("The \"Status\" menu will automatically exit after 1 command, regardless of whether the command was valid, and return to the game.");
 		System.out.println("If you wish to drink a potion, first type in \"Status\" and follow the instructions given.");
 		System.out.println("In this game, every time you choose to perform an action you will lose HP. When your HP hits 0, you will die and the game will end.");
@@ -256,9 +256,11 @@ public class Main {
 					input = in.nextLine();
 				}
 				if (input.equalsIgnoreCase("struggle")) {
+                    character.currentHealth = character.move();
 					System.out.println("Your struggles are useless as you feel yourself being beamed up and everything fades to black.");
 				}
-				else {
+				else if (input.equalsIgnoreCase("comply")) {
+                    character.currentHealth = character.move();
 					System.out.println("You relax your body and as you feel yourself being beamed up, everything fades to black.");
 				}
 				break LOOP_1;
