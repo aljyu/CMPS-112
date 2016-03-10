@@ -16,7 +16,7 @@ extra :: Player -> Player
 extra hero = Player (hp hero) ((potions hero) + 1)
 
 hit :: Player -> Player
-hit hero = Player ((hp hero) - 15) (potions hero)
+hit hero = Player ((hp hero) - 10) (potions hero)
 
 drink :: Player -> Player
 drink hero
