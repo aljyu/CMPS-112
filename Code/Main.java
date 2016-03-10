@@ -614,7 +614,6 @@ public class Main {
 					break LOOP_3;
 				}
 				System.out.println("\nThe guard wakes up with a jolt and attacks you. You are quickly overpowered by the guard who proceeds to eleminate the threat, you.");
-				gameStatus = false;
 				break LOOP_3;
 			}
 			else if (input.equalsIgnoreCase("surprise attack")) {
@@ -792,7 +791,6 @@ public class Main {
 					break LOOP_3;
 				}
 				System.out.println("\nYou quietly sneak around the guard and reach your hand out for the door handle. You carefully turn the handle and open the door, only to realize that doing so has created a loud noise.\nThe guard's eyes quickly shoot open and sees you right away. You are quickly overpowered by the guard who proceeds to eleminate the threat, you.");
-				gameStatus = false;
 				break LOOP_3;
 			}
 			else {

@@ -10,15 +10,15 @@ module Player
 data Player = Player{ hp :: Int, potions :: Int} deriving (Show,Eq)
 
 move :: Player -> Player
-move hero = Player ((hp hero) - 5) (potions hero)
+move hero = Player ((hp hero) - 10) (potions hero)
 
 extra :: Player -> Player
 extra hero = Player (hp hero) ((potions hero) + 1)
 
 hit :: Player -> Player
-hit hero = Player ((hp hero) - 20) (potions hero)
+hit hero = Player ((hp hero) - 15) (potions hero)
 
 drink :: Player -> Player
 drink hero
-    | ((hp hero) + 20) > 100   = Player 105 ((potions hero) - 1)
-    | otherwise                     = Player ((hp hero) + 25) ((potions hero) - 1)
+    | ((hp hero) + 30) > 100   = Player 110 ((potions hero) - 1)
+    | otherwise                     = Player ((hp hero) + 40) ((potions hero) - 1)

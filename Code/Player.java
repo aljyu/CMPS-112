@@ -1,14 +1,12 @@
 public class Player{
     // Player Variables
-//    private String name;
     public static int maxHealth;
     public static int currentHealth;
     public static int attackDamage;
     public static int numPotions;
 
     // Player's constructor
-    public Player (/*String name, */ int maxHP, int currentHP, int damage, int potion, int heal) {
-//        name = this.name;
+    public Player (int maxHP, int currentHP, int damage, int potion, int heal) {
         maxHealth = maxHP;
         currentHealth = currentHP;
         attackDamage = damage;
@@ -33,7 +31,7 @@ public class Player{
 	
 	// Method to state what happens every time the player makes a move
 	public static int move() {
-		return (currentHealth - 5);
+		return (currentHealth - 10);
 	}
 	
 	// Method to state what happens when the player gets hit (by the boss)
@@ -43,6 +41,6 @@ public class Player{
 	
 	// Method to increase HP using a potion
 	public static int drink() {
-		return (currentHealth + 20);
+		return (currentHealth + 30);
 	}
 }
